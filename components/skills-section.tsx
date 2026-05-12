@@ -77,22 +77,6 @@ const skillCategories: SkillCategory[] = [
               it: "PowerShell (CSOM/SPO) per automazione di task massivi e gestione SharePoint.",
             },
           },
-          {
-            name: "Power Automate",
-            description: {
-              es: "Diseño y ejecución de flujos de automatización",
-              en: "Design and execution of automation flows",
-              it: "Progettazione ed esecuzione di flussi di automazione",
-            },
-          },
-          {
-            name: "Security & Access",
-            description: {
-              es: "Gestión MFA, MS Defender y administración de accesos externos",
-              en: "MFA management, MS Defender and external access administration",
-              it: "Gestione MFA, MS Defender e amministrazione accessi esterni",
-            },
-          },
         ],
       },
       {
@@ -100,11 +84,11 @@ const skillCategories: SkillCategory[] = [
         titleKey: "infra",
         skills: [
           {
-            name: "PowerShell (CSOM/SPO)",
+            name: "Microsoft 365 Administration",
             description: {
-              es: "Scripts para modificación masiva de datos y automatización en SharePoint",
-              en: "Scripts for bulk data modification and SharePoint automation",
-              it: "Script per modifica massiva dati e automazione SharePoint",
+              es: "Configuración avanzada de SharePoint Online (arquitectura de información, permisos y gobernanza).",
+              en: "Advanced SharePoint Online configuration (information architecture, permissions, and governance).",
+              it: "Configurazione avanzata di SharePoint Online (architettura dell'informazione, permessi e governance).",
             },
           },
           {
