@@ -44,8 +44,8 @@ export interface Translations {
     categories: {
       dev: string
       cloud: string
-      scripting: string
-      documentation: string
+      infra: string
+      profskills: string
     }
   }// Dentro de interface Translations
   projects: {
@@ -122,9 +122,9 @@ const translations: Record<Locale, Translations> = {
       titleHighlight: "técnicas",
       categories: {
         dev: "Software Development & Code",
-        cloud: "Infraestructura Cloud & Operations",
-        scripting: "Scripting y Gestión de Datos",
-        documentation: "Documentación y Soporte",
+        cloud: "Cloud Automation & Backend Logic",
+        infra: "Cloud Infrastructure & Operations",
+        profskills: "Professional Skills",
       },
     },
     // Para ES (repite lo mismo para EN e IT)
