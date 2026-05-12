@@ -26,29 +26,29 @@ export function HeroSection() {
                 className="object-cover grayscale"
                 priority
               />
-              {/* Decorative frame */}
+
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary -z-10" />
             </div>
           </motion.div>
 
           {/* Right: Content */}
           <div className="order-1 lg:order-2">
-          {/* Name */}
-          <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-        <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground mb-4">
-          {t.hero.greeting} {/* <--- Cambio aquí */}
-        </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-foreground">
-        Daiana Senese
-        </h1>
-        </motion.div>
-        
+            {/* Name */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground mb-4">
+                {t.hero.greeting} {/* <--- Cambio aquí */}
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-foreground">
+                Daiana Senese
+              </h1>
+            </motion.div>
+
             {/* Role */}
-            <motion.div 
+            <motion.div
               className="mt-8 flex items-start gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -61,7 +61,7 @@ export function HeroSection() {
             </motion.div>
 
             {/* Description */}
-            <motion.p 
+            <motion.p
               className="mt-8 text-base md:text-lg text-muted-foreground leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -71,7 +71,7 @@ export function HeroSection() {
             </motion.p>
 
             {/* Stats */}
-            <motion.div 
+            <motion.div
               className="mt-10 grid grid-cols-3 gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
