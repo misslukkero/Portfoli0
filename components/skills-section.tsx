@@ -42,6 +42,14 @@ const skillCategories: SkillCategory[] = [
         },
       },
       {
+        name: "Database",
+        description: {
+          es: "Visual Studio, Visual Studio Code, Vercel.",
+          en: "Visual Studio, Visual Studio Code, Vercel.",
+          it: "Visual Studio, Visual Studio Code, Vercel.",
+        },
+      },
+      {
         name: "Microsoft 365 Administration",
         description: {
           es: "Configuración de SharePoint Online, listas, librerías y gestión de permisos",
