@@ -198,9 +198,10 @@ const translations: Record<Locale, Translations> = {
       title: "Technical ",
       titleHighlight: "skills",
       categories: {
-        cloud: "Cloud Infrastructure & Operations",
-        scripting: "Scripting & Data Management",
-        documentation: "Documentation & Support",
+        dev: "Software Development & Code",
+        cloud: "Cloud Automation & Backend Logic",
+        infra: "Cloud Infrastructure & Operations",
+        profskills: "Professional Skills",
       },
     },
     // Para EN (repite lo mismo para ES e IT)
