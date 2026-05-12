@@ -45,7 +45,7 @@ const skillCategories: SkillCategory[] = [
         name: "Database",
         description: {
           es: "Visual Studio, Visual Studio Code, Vercel.",
-          en: "Visual Studio, Visual Studio Code, Vercel.",
+          en: "Dataverse (data modeling, lookup/calculated columns, composite keys) and SQL foundations.",
           it: "Visual Studio, Visual Studio Code, Vercel.",
         },
       },
