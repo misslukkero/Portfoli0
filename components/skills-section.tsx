@@ -92,11 +92,11 @@ const skillCategories: SkillCategory[] = [
             },
           },
           {
-            name: "Dataverse",
+            name: "Identity & Security",
             description: {
               es: "Creación de tablas, columnas Lookup/Calcolate y claves compuestas",
               en: "Table creation, Lookup/Calculated columns and composite keys",
-              it: "Creazione tabelle, colonne Lookup/Calcolate e chiavi composte",
+              it: "Microsoft Entra ID (ex Azure AD), gestione MFA e amministrazione accessi per utenti esterni.",
             },
           },
           {
