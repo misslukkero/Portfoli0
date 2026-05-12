@@ -54,11 +54,11 @@ const skillCategories: SkillCategory[] = [
         titleKey: "cloud",
         skills: [
           {
-            name: "Microsoft 365 Administration",
+            name: "Azure Logic Apps",
             description: {
-              es: "Configuración de SharePoint Online, listas, librerías y gestión de permisos",
-              en: "SharePoint Online configuration, lists, libraries and permission management",
-              it: "Configurazione SharePoint Online, liste, librerie e gestione permessi",
+              es: "Diseño e implementación de flujos de trabajo empresariales complejos.",
+              en: "Design and implementation of complex enterprise workflows.",
+              it: "Progettazione e implementazione di workflow aziendali complessi.",
             },
           },
           {
