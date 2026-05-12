@@ -125,7 +125,7 @@ const translations: Record<Locale, Translations> = {
         documentation: "Documentación y Soporte",
       },
     },
-    // Ejemplo para ES (repite lo mismo para EN e IT)
+    // Para ES (repite lo mismo para EN e IT)
     projects: {
       subtitle: "Casos de éxito",
       title: "Proyectos",
