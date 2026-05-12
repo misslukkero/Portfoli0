@@ -171,7 +171,7 @@ const translations: Record<Locale, Translations> = {
       title: "I'm a ",
       titleHighlight: "Cloud & Automation Consultant",
       titleEnd: ". Specialized in Microsoft 365 and Azure, I help companies optimize their processes through automation solutions.",
-      description: "My profile combines technical autonomy in IT environments with 9 years of prior experience in healthcare, which gives me operational rigor, precision in protocols, and management skills in high-pressure contexts.",
+      description: "I am a Cloud & Automation Specialist who believes that technical excellence is built on precision. With over 2 years of experience in the Microsoft ecosystem (M365, Azure, Power Platform) and a previous 9-year background in the healthcare sector, I bring a unique 'zero-error' mindset to IT infrastructure. I specialize in transforming manual bottlenecks into scalable, automated cloud workflows. My Current Evolution: While my core expertise lies in SharePoint and Power Platform, my passion for building robust solutions has led me to expand my horizons. Having completed a Full Stack Junior program (Next.js & TypeScript), I am now deeply focused on mastering C# and .NET to bridge the gap between cloud automation and professional software development.",
       viewWork: "View experience",
       stats: {
         experience: "IT Experience",
