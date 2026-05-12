@@ -25,12 +25,12 @@ const skillCategories: SkillCategory[] = [
           it: "Studio attivo di C# / .NET; esperienza pratica con TypeScript, Next.js e basi di JSON.",
         },
       },
-            {
-        name: "Languages & Frameworks",
+      {
+        name: "Strumenti di Sviluppo",
         description: {
-          es: "Estudio activo de C# / .NET; experiencia práctica con TypeScript, Next.js y bases de JSON.",
-          en: "Active study of C# / .NET; practical experience with TypeScript, Next.js, and JSON foundations.",
-          it: "Studio attivo di C# / .NET; esperienza pratica con TypeScript, Next.js e basi di JSON.",
+          es: "Visual Studio, Visual Studio Code, Vercel.",
+          en: "Visual Studio, Visual Studio Code, Vercel.",
+          it: "Visual Studio, Visual Studio Code, Vercel.",
         },
       },
       {
