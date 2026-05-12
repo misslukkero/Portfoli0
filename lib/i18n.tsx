@@ -275,7 +275,7 @@ const translations: Record<Locale, Translations> = {
       title: "Competenze ",
       titleHighlight: "tecniche",
       categories: {
-        dev: "Software Development & Code",
+        dev: "Sviluppo Software & Code",
         cloud: "Cloud Automation & Backend Logic",
         infra: "Cloud Infrastructure & Operations",
         profskills: "Professional Skills",
