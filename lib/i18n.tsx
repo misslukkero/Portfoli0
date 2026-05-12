@@ -275,9 +275,10 @@ const translations: Record<Locale, Translations> = {
       title: "Competenze ",
       titleHighlight: "tecniche",
       categories: {
-        cloud: "Infrastruttura Cloud & Operations",
-        scripting: "Scripting e Gestione Dati",
-        documentation: "Documentazione e Supporto",
+        dev: "Software Development & Code",
+        cloud: "Cloud Automation & Backend Logic",
+        infra: "Cloud Infrastructure & Operations",
+        profskills: "Professional Skills",
       },
     },
     projects: {
