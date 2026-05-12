@@ -36,8 +36,8 @@ const skillCategories: SkillCategory[] = [
             {
         name: "Controllo di Versione & ALM",
         description: {
-          es: "Visual Studio, Visual Studio Code, Vercel.",
-          en: "Visual Studio, Visual Studio Code, Vercel.",
+          es: "Git (SourceTree/GitHub), gestión de repositorios y seguimiento de tareas en Azure DevOps.",
+          en: "Git (SourceTree/GitHub), repository management, and task tracking in Azure DevOps.",
           it: "Git (SourceTree/GitHub), gestione di repository e tracking task in Azure DevOps.",
         },
       },
