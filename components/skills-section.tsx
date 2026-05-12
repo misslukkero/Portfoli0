@@ -50,6 +50,10 @@ const skillCategories: SkillCategory[] = [
         },
       },
       {
+    id: "scripting",
+    titleKey: "scripting",
+    skills: [
+      {
         name: "Microsoft 365 Administration",
         description: {
           es: "Configuración de SharePoint Online, listas, librerías y gestión de permisos",
