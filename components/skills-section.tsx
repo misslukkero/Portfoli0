@@ -33,6 +33,14 @@ const skillCategories: SkillCategory[] = [
           it: "Visual Studio, Visual Studio Code, Vercel.",
         },
       },
+            {
+        name: "Strumenti di Sviluppo",
+        description: {
+          es: "Visual Studio, Visual Studio Code, Vercel.",
+          en: "Visual Studio, Visual Studio Code, Vercel.",
+          it: "Visual Studio, Visual Studio Code, Vercel.",
+        },
+      },
       {
         name: "Microsoft 365 Administration",
         description: {
