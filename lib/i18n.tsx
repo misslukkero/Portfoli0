@@ -278,7 +278,7 @@ const translations: Record<Locale, Translations> = {
         dev: "Sviluppo Software & Code",
         cloud: "Cloud Automation & Backend Logic",
         infra: "Cloud Infrastructure & Operations",
-        profskills: "Professional Skills",
+        profskills: "Competenze Professionali",
       },
     },
     projects: {
