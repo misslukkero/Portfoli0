@@ -62,11 +62,11 @@ const skillCategories: SkillCategory[] = [
             },
           },
           {
-            name: "Microsoft Entra ID",
+            name: "Power Platform",
             description: {
-              es: "Gestión de usuarios y grupos en entornos empresariales",
-              en: "User and group management in enterprise environments",
-              it: "Gestione utenti e gruppi in ambienti aziendali",
+              es: "Desarrollo de flujos con Power Automate y gestión de soluciones en Power Apps.",
+              en: "Flow development with Power Automate and solution management in Power Apps.",
+              it: "Sviluppo di flussi con Power Automate e gestione di soluzioni in Power Apps.",
             },
           },
           {
