@@ -108,11 +108,11 @@ const skillCategories: SkillCategory[] = [
             },
           },
           {
-            name: "C# / Visual Studio",
+            name: "Microsoft Defender",
             description: {
-              es: "Intervenciones técnicas en código para Event Receivers",
-              en: "Technical code interventions for Event Receivers",
-              it: "Interventi tecnici su codice per Event Receivers",
+              es: "Configuración de Safe Senders y protocolos de seguridad de correo.",
+              en: "Safe Senders configuration and email security protocols.",
+              it: "Configurazione Safe Senders e protocolli di sicurezza email.",
             },
           },
         ],
