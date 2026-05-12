@@ -121,8 +121,8 @@ const translations: Record<Locale, Translations> = {
       title: "Habilidades ",
       titleHighlight: "técnicas",
       categories: {
-        dev: "Software Development & Code",
-        cloud: "Cloud Automation & Backend Logic",
+        dev: "Desarrollo de Software y Código",
+        cloud: "Automatización Cloud y Lógica de Backend",
         infra: "Cloud Infrastructure & Operations",
         profskills: "Professional Skills",
       },
