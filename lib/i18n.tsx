@@ -51,7 +51,7 @@ export interface Translations {
     subtitle: string
     title: string
     titleHighlight: string
-    // Definimos las llaves de las tecnologías que usaremos como tags
+    // Definicion de las llaves de las tecnologías como tags
     tech: {
       sharepoint: string
       powerAutomate: string
