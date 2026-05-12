@@ -46,7 +46,7 @@ const skillCategories: SkillCategory[] = [
         description: {
           es: "Dataverse (modelado de datos, relaciones lookup, llaves compuestas) y bases de SQL.",
           en: "Dataverse (data modeling, lookup/calculated columns, composite keys) and SQL foundations.",
-          it: "Visual Studio, Visual Studio Code, Vercel.",
+          it: "Dataverse (modellazione dati, relazioni lookup, chiavi composte) e basi di SQL.",
         },
       },
       {
