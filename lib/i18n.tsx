@@ -42,6 +42,7 @@ export interface Translations {
     title: string
     titleHighlight: string
     categories: {
+      dev: string
       cloud: string
       scripting: string
       documentation: string
@@ -120,6 +121,7 @@ const translations: Record<Locale, Translations> = {
       title: "Habilidades ",
       titleHighlight: "técnicas",
       categories: {
+        dev: "Software Development & Code",
         cloud: "Infraestructura Cloud & Operations",
         scripting: "Scripting y Gestión de Datos",
         documentation: "Documentación y Soporte",
