@@ -247,7 +247,7 @@ const translations: Record<Locale, Translations> = {
       title: "Sono una ",
       titleHighlight: "Cloud & Automation Consultant",
       titleEnd: ". Specializzata in Microsoft 365 e Azure, aiuto le aziende a ottimizzare i loro processi attraverso soluzioni di automazione.",
-      description: "Il mio profilo unisce l'autonomia tecnica in ambienti IT con una traiettoria precedente di 9 anni nel settore sanitario, che mi conferisce rigore operativo, precisione nel rispetto dei protocolli e capacità di gestione in contesti ad alta pressione.",
+      description: "Sono una Specialista Cloud & Automation convinta che l'eccellenza tecnica si costruisca sulla base della precisione. Con oltre 2 anni di esperienza nell'ecosistema Microsoft (M365, Azure, Power Platform) e un percorso precedente di 9 anni nel settore sanitario, porto nel mondo IT una mentalità unica orientata allo 'zero errori'. La mia specialità è trasformare i colli di bottiglia manuali in flussi di lavoro cloud automatizzati e scalabili. La mia evoluzione attuale: Sebbene la mia esperienza principale si concentri su SharePoint e Power Platform, la mia passione per la creazione di soluzioni robuste mi ha spinta ad ampliare i miei orizzonti. Dopo aver completato una formazione come Full Stack Junior (Next.js e TypeScript), ora sono profondamente focalizzata sul padroneggiare C# e .NET per unire l'automazione cloud allo sviluppo software professionale.",
       viewWork: "Vedi esperienza",
       stats: {
         experience: "Esperienza IT",
