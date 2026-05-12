@@ -94,8 +94,8 @@ const skillCategories: SkillCategory[] = [
           {
             name: "Identity & Security",
             description: {
-              es: "Creación de tablas, columnas Lookup/Calcolate y claves compuestas",
-              en: "Table creation, Lookup/Calculated columns and composite keys",
+              es: "Microsoft Entra ID (anteriormente Azure AD), gestión de MFA y administración de accesos externos.",
+              en: "Microsoft Entra ID (formerly Azure AD), MFA management, and external access administration.",
               it: "Microsoft Entra ID (ex Azure AD), gestione MFA e amministrazione accessi per utenti esterni.",
             },
           },
