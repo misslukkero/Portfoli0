@@ -14,9 +14,17 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    id: "cloud",
-    titleKey: "cloud",
+    id: "dev",
+    titleKey: "dev",
     skills: [
+      {
+        name: "Languages & Frameworks",
+        description: {
+          es: "Estudio activo de C# / .NET; experiencia práctica con TypeScript, Next.js y bases de JSON.",
+          en: "Active study of C# / .NET; practical experience with TypeScript, Next.js, and JSON foundations.",
+          it: "Studio attivo di C# / .NET; esperienza pratica con TypeScript, Next.js e basi di JSON.",
+        },
+      },
       {
         name: "Microsoft 365 Administration",
         description: {
