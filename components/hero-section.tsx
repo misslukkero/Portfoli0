@@ -11,7 +11,7 @@ export function HeroSection() {
     <section id="about" className="min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-32 pb-20">
       <div className="w-full max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Photo */}
+        
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -26,28 +26,28 @@ export function HeroSection() {
                 className="object-cover grayscale"
                 priority
               />
-              {/* Decorative frame */}
+            
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary -z-10" />
             </div>
           </motion.div>
 
-          {/* Right: Content */}
+        
           <div className="order-1 lg:order-2">
-          {/* Name */}
+          
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
         <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground mb-4">
-          {t.hero.greeting} {/* <--- Cambio aquí */}
+          {t.hero.greeting} 
         </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-foreground">
         Daiana Senese
         </h1>
         </motion.div>
         
-            {/* Role */}
+            
             <motion.div 
               className="mt-8 flex items-start gap-4"
               initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export function HeroSection() {
               </p>
             </motion.div>
 
-            {/* Description */}
+            
             <motion.p 
               className="mt-8 text-base md:text-lg text-muted-foreground leading-relaxed"
               initial={{ opacity: 0 }}
@@ -70,7 +70,7 @@ export function HeroSection() {
               {t.hero.description}
             </motion.p>
 
-            {/* Stats */}
+            
             <motion.div 
               className="mt-10 grid grid-cols-3 gap-6"
               initial={{ opacity: 0 }}
