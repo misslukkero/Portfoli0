@@ -123,8 +123,8 @@ const translations: Record<Locale, Translations> = {
       categories: {
         dev: "Desarrollo de Software y Código",
         cloud: "Automatización Cloud y Lógica de Backend",
-        infra: "Cloud Infrastructure & Operations",
-        profskills: "Professional Skills",
+        infra: "Infraestructura Cloud y Operaciones",
+        profskills: "Competencias Profesionales",
       },
     },
     // Para ES (repite lo mismo para EN e IT)
