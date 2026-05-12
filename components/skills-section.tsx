@@ -70,11 +70,11 @@ const skillCategories: SkillCategory[] = [
             },
           },
           {
-            name: "Azure Logic Apps",
+            name: "Scripting",
             description: {
-              es: "Implementación de workflows empresariales automatizados",
-              en: "Implementation of automated business workflows",
-              it: "Implementazione di workflow aziendali automatizzati",
+              es: "PowerShell (CSOM/SPO) para actualizaciones masivas de datos y automatización de SharePoint.",
+              en: "PowerShell (CSOM/SPO) for mass data updates and SharePoint automation.",
+              it: "PowerShell (CSOM/SPO) per automazione di task massivi e gestione SharePoint.",
             },
           },
           {
