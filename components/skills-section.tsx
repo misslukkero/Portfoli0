@@ -139,7 +139,8 @@ const skillCategories: SkillCategory[] = [
           },
         ],
       },
-    ]
+    ],
+  ]
 
 const certifications = [
       { name: "Developer (364h)", institution: "ISPC, Argentina", year: "2023" },
