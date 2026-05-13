@@ -49,98 +49,99 @@ const skillCategories: SkillCategory[] = [
           it: "Dataverse (modellazione dati, relazioni lookup, chiavi composte) e basi di SQL.",
         },
       },
+    ],
+   }, 
+   {
+    id: "cloud",
+    titleKey: "cloud",
+    skills: [
       {
-        id: "cloud",
-        titleKey: "cloud",
-        skills: [
-          {
-            name: "Azure Logic Apps",
-            description: {
-              es: "Diseño e implementación de flujos de trabajo empresariales complejos.",
-              en: "Design and implementation of complex enterprise workflows.",
-              it: "Progettazione e implementazione di workflow aziendali complessi.",
-            },
-          },
-          {
-            name: "Power Platform",
-            description: {
-              es: "Desarrollo de flujos con Power Automate y gestión de soluciones en Power Apps.",
-              en: "Flow development with Power Automate and solution management in Power Apps.",
-              it: "Sviluppo di flussi con Power Automate e gestione di soluzioni in Power Apps.",
-            },
-          },
-          {
-            name: "Scripting",
-            description: {
-              es: "PowerShell (CSOM/SPO) para actualizaciones masivas de datos y automatización de SharePoint.",
-              en: "PowerShell (CSOM/SPO) for mass data updates and SharePoint automation.",
-              it: "PowerShell (CSOM/SPO) per automazione di task massivi e gestione SharePoint.",
-            },
-          },
-        ],
+        name: "Azure Logic Apps",
+        description: {
+          es: "Diseño e implementación de flujos de trabajo empresariales complejos.",
+          en: "Design and implementation of complex enterprise workflows.",
+          it: "Progettazione e implementazione di workflow aziendali complessi.",
+        },
       },
       {
-        id: "infra",
-        titleKey: "infra",
-        skills: [
-          {
-            name: "Microsoft 365 Administration",
-            description: {
-              es: "Configuración avanzada de SharePoint Online (arquitectura de información, permisos y gobernanza).",
-              en: "Advanced SharePoint Online configuration (information architecture, permissions, and governance).",
-              it: "Configurazione avanzata di SharePoint Online (architettura dell'informazione, permessi e governance).",
-            },
-          },
-          {
-            name: "Identity & Security",
-            description: {
-              es: "Microsoft Entra ID (anteriormente Azure AD), gestión de MFA y administración de accesos externos.",
-              en: "Microsoft Entra ID (formerly Azure AD), MFA management, and external access administration.",
-              it: "Microsoft Entra ID (ex Azure AD), gestione MFA e amministrazione accessi per utenti esterni.",
-            },
-          },
-          {
-            name: "Azure DevOps",
-            description: {
-              es: "Tracking de tareas, gestión Git y supervisión de pipelines",
-              en: "Task tracking, Git management and pipeline supervision",
-              it: "Tracking task, gestione Git e supervisione pipeline",
-            },
-          },
-          {
-            name: "Microsoft Defender",
-            description: {
-              es: "Configuración de Safe Senders y protocolos de seguridad de correo.",
-              en: "Safe Senders configuration and email security protocols.",
-              it: "Configurazione Safe Senders e protocolli di sicurezza email.",
-            },
-          },
-        ],
+        name: "Power Platform",
+        description: {
+          es: "Desarrollo de flujos con Power Automate y gestión de soluciones en Power Apps.",
+          en: "Flow development with Power Automate and solution management in Power Apps.",
+          it: "Sviluppo di flussi con Power Automate e gestione di soluzioni in Power Apps.",
+        },
       },
       {
-        id: "profskills",
-        titleKey: "profskills",
-        skills: [
-          {
-            name: "Technical Writing",
-            description: {
-              es: "Manuales de gestión y procedimientos técnicos para clientes internacionales",
-              en: "Management manuals and technical procedures for international clients",
-              it: "Manuali di gestione e procedure tecniche per clienti internazionali",
-            },
-          },
-          {
-            name: "Advanced Support",
-            description: {
-              es: "Resolución de incidentes técnicos (Nivel 2) con ServiceNow",
-              en: "Technical incident resolution (Level 2) with ServiceNow",
-              it: "Risoluzione incidenti tecnici (Livello 2) con ServiceNow",
-            },
-          },
-        ],
+        name: "Scripting",
+        description: {
+          es: "PowerShell (CSOM/SPO) para actualizaciones masivas de datos y automatización de SharePoint.",
+          en: "PowerShell (CSOM/SPO) for mass data updates and SharePoint automation.",
+          it: "PowerShell (CSOM/SPO) per automazione di task massivi e gestione SharePoint.",
+        },
       },
     ],
-  }
+  },
+  {
+    id: "infra",
+    titleKey: "infra",
+    skills: [
+      {
+        name: "Microsoft 365 Administration",
+        description: {
+          es: "Configuración avanzada de SharePoint Online (arquitectura de información, permisos y gobernanza).",
+          en: "Advanced SharePoint Online configuration (information architecture, permissions, and governance).",
+          it: "Configurazione avanzata di SharePoint Online (architettura dell'informazione, permessi e governance).",
+        },
+      },
+      {
+        name: "Identity & Security",
+        description: {
+          es: "Microsoft Entra ID (anteriormente Azure AD), gestión de MFA y administración de accesos externos.",
+          en: "Microsoft Entra ID (formerly Azure AD), MFA management, and external access administration.",
+          it: "Microsoft Entra ID (ex Azure AD), gestione MFA e amministrazione accessi per utenti esterni.",
+        },
+      },
+      {
+        name: "Azure DevOps",
+        description: {
+          es: "Tracking de tareas, gestión Git y supervisión de pipelines",
+          en: "Task tracking, Git management and pipeline supervision",
+          it: "Tracking task, gestione Git e supervisione pipeline",
+        },
+      },
+      {
+        name: "Microsoft Defender",
+        description: {
+          es: "Configuración de Safe Senders y protocolos de seguridad de correo.",
+          en: "Safe Senders configuration and email security protocols.",
+          it: "Configurazione Safe Senders e protocolli di sicurezza email.",
+        },
+      },
+    ],
+  },
+  {
+    id: "profskills",
+    titleKey: "profskills",
+    skills: [
+      {
+        name: "Technical Writing",
+        description: {
+          es: "Manuales de gestión y procedimientos técnicos para clientes internacionales",
+          en: "Management manuals and technical procedures for international clients",
+          it: "Manuali di gestione e procedure tecniche per clienti internazionali",
+        },
+      },
+      {
+        name: "Advanced Support",
+        description: {
+          es: "Resolución de incidentes técnicos (Nivel 2) con ServiceNow",
+          en: "Technical incident resolution (Level 2) with ServiceNow",
+          it: "Risoluzione incidenti tecnici (Livello 2) con ServiceNow",
+        },
+      },
+    ],
+  },
+]
 
 const certifications = [
   { name: "Developer (364h)", institution: "ISPC, Argentina", year: "2023" },
