@@ -40,7 +40,7 @@ export function HeroSection() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground mb-4">
-                {t.hero.greeting} {/* <--- Cambio aquí */}
+                {t.hero.greeting} 
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-foreground">
                 Daiana Senese
