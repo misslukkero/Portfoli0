@@ -42,16 +42,17 @@ export interface Translations {
     title: string
     titleHighlight: string
     categories: {
+      dev: string
       cloud: string
-      scripting: string
-      documentation: string
+      infra: string
+      profskills: string
     }
   }// Dentro de interface Translations
   projects: {
     subtitle: string
     title: string
     titleHighlight: string
-    // Definimos las llaves de las tecnologías que usaremos como tags
+    // Definicion de las llaves de las tecnologías como tags
     tech: {
       sharepoint: string
       powerAutomate: string
@@ -95,7 +96,7 @@ const translations: Record<Locale, Translations> = {
       title: "Soy ",
       titleHighlight: "Cloud & Automation Consultant",
       titleEnd: ". Especializada en Microsoft 365 y Azure, ayudo a las empresas a optimizar sus procesos mediante soluciones de automatización.",
-      description: "Mi perfil combina autonomía técnica en entornos IT con 9 años de experiencia previa en el sector sanitario, lo que me aporta rigor operativo, precisión en protocolos y capacidad de gestión en contextos de alta presión.",
+      description: "Soy una Especialista en Cloud & Automation convencida de que la excelencia técnica se construye sobre la base de la precisión. Con más de 2 años de experiencia en el ecosistema Microsoft (M365, Azure, Power Platform) y una trayectoria previa de 9 años en el sector salud, aporto al mundo IT una mentalidad única de 'error cero'. Mi especialidad es transformar cuellos de botella manuales en flujos de trabajo en la nube automatizados y escalables. Aunque mi experiencia principal se centra en SharePoint y Power Platform, mi pasión por construir soluciones robustas me ha llevado a ampliar mis horizontes. Tras completar una formación como Full Stack Junior (Next.js y TypeScript), ahora estoy profundamente enfocada en dominar C# y .NET para unir la automatización cloud con el desarrollo de software profesional.",
       viewWork: "Ver experiencia",
       stats: {
         experience: "Experiencia IT",
@@ -120,12 +121,13 @@ const translations: Record<Locale, Translations> = {
       title: "Habilidades ",
       titleHighlight: "técnicas",
       categories: {
-        cloud: "Infraestructura Cloud & Operations",
-        scripting: "Scripting y Gestión de Datos",
-        documentation: "Documentación y Soporte",
+        dev: "Desarrollo de Software y Código",
+        cloud: "Automatización Cloud y Lógica de Backend",
+        infra: "Infraestructura Cloud y Operaciones",
+        profskills: "Competencias Profesionales",
       },
     },
-    // Ejemplo para ES (repite lo mismo para EN e IT)
+    // Para ES (repite lo mismo para EN e IT)
     projects: {
       subtitle: "Casos de éxito",
       title: "Proyectos",
@@ -145,7 +147,7 @@ const translations: Record<Locale, Translations> = {
       subtitle: "Contacto",
       title: "¿Tienes un proyecto en mente? ",
       titleHighlight: "Hablemos",
-      description: "Actualmente estoy abierta a nuevas oportunidades laborales y proyectos de consultoría en el ámbito Cloud y automatización.",
+      description: "Actualmente busco integrarme en equipos de Global Delivery como Junior .NET Developer o Consultora Cloud. Mi enfoque principal es la creación de soluciones escalables y la optimización de procesos mediante código y automatización. Si buscas una profesional trilingüe con una mentalidad orientada a la resolución técnica y la excelencia operativa, conectemos.",
       networks: "Redes",
       location: "Ubicación",
       availability: "UTC+1 · Disponible para remoto",
@@ -171,7 +173,7 @@ const translations: Record<Locale, Translations> = {
       title: "I'm a ",
       titleHighlight: "Cloud & Automation Consultant",
       titleEnd: ". Specialized in Microsoft 365 and Azure, I help companies optimize their processes through automation solutions.",
-      description: "My profile combines technical autonomy in IT environments with 9 years of prior experience in healthcare, which gives me operational rigor, precision in protocols, and management skills in high-pressure contexts.",
+      description: "I am a Cloud & Automation Specialist who believes that technical excellence is built on precision. With over 2 years of experience in the Microsoft ecosystem (M365, Azure, Power Platform) and a previous 9-year background in the healthcare sector, I bring a unique 'zero-error' mindset to IT infrastructure. I specialize in transforming manual bottlenecks into scalable, automated cloud workflows. While my core expertise lies in SharePoint and Power Platform, my passion for building robust solutions has led me to expand my horizons. Having completed a Full Stack Junior program (Next.js & TypeScript), I am now deeply focused on mastering C# and .NET to bridge the gap between cloud automation and professional software development.",
       viewWork: "View experience",
       stats: {
         experience: "IT Experience",
@@ -196,12 +198,13 @@ const translations: Record<Locale, Translations> = {
       title: "Technical ",
       titleHighlight: "skills",
       categories: {
-        cloud: "Cloud Infrastructure & Operations",
-        scripting: "Scripting & Data Management",
-        documentation: "Documentation & Support",
+        dev: "Software Development & Code",
+        cloud: "Cloud Automation & Backend Logic",
+        infra: "Cloud Infrastructure & Operations",
+        profskills: "Professional Skills",
       },
     },
-    // Ejemplo para EN (repite lo mismo para ES e IT)
+    // Para EN (repite lo mismo para ES e IT)
     projects: {
       subtitle: "Case studies",
       title: "Selected",
@@ -221,7 +224,7 @@ const translations: Record<Locale, Translations> = {
       subtitle: "Contact",
       title: "Have a project in mind? ",
       titleHighlight: "Let's talk",
-      description: "I'm currently open to new job opportunities and consulting projects in Cloud and automation.",
+      description: "I'm currently open to new professional challenges as a Junior .NET Developer or Cloud & Automation Specialist within international teams. If you are looking for a trilingual professional (EN-IT-ES) focused on writing scalable code, mastering the Microsoft ecosystem, and delivering high-quality digital solutions, I'd love to hear from you.",
       networks: "Networks",
       location: "Location",
       availability: "UTC+1 · Available for remote work",
@@ -247,7 +250,7 @@ const translations: Record<Locale, Translations> = {
       title: "Sono una ",
       titleHighlight: "Cloud & Automation Consultant",
       titleEnd: ". Specializzata in Microsoft 365 e Azure, aiuto le aziende a ottimizzare i loro processi attraverso soluzioni di automazione.",
-      description: "Il mio profilo unisce l'autonomia tecnica in ambienti IT con una traiettoria precedente di 9 anni nel settore sanitario, che mi conferisce rigore operativo, precisione nel rispetto dei protocolli e capacità di gestione in contesti ad alta pressione.",
+      description: "Sono una Specialista Cloud & Automation convinta che l'eccellenza tecnica si costruisca sulla base della precisione. Con oltre 2 anni di esperienza nell'ecosistema Microsoft (M365, Azure, Power Platform) e un percorso precedente di 9 anni nel settore sanitario, porto nel mondo IT una mentalità unica orientata allo 'zero errori'. La mia specialità è trasformare i colli di bottiglia manuali in flussi di lavoro cloud automatizzati e scalabili. Sebbene la mia esperienza principale si concentri su SharePoint e Power Platform, la mia passione per la creazione di soluzioni robuste mi ha spinta ad ampliare i miei orizzonti. Dopo aver completato una formazione come Full Stack Junior (Next.js e TypeScript), ora sono profondamente focalizzata sul padroneggiare C# e .NET per unire l'automazione cloud allo sviluppo software professionale.",
       viewWork: "Vedi esperienza",
       stats: {
         experience: "Esperienza IT",
@@ -272,9 +275,10 @@ const translations: Record<Locale, Translations> = {
       title: "Competenze ",
       titleHighlight: "tecniche",
       categories: {
-        cloud: "Infrastruttura Cloud & Operations",
-        scripting: "Scripting e Gestione Dati",
-        documentation: "Documentazione e Supporto",
+        dev: "Sviluppo Software & Code",
+        cloud: "Cloud Automation & Backend Logic",
+        infra: "Cloud Infrastructure & Operations",
+        profskills: "Competenze Professionali",
       },
     },
     projects: {
@@ -296,7 +300,7 @@ const translations: Record<Locale, Translations> = {
       subtitle: "Contatto",
       title: "Hai un progetto in mente? ",
       titleHighlight: "Parliamone",
-      description: "Attualmente sono aperta a nuove opportunità lavorative e progetti di consulenza in ambito Cloud e automazione.",
+      description: "Sono attualmente alla ricerca di nuove opportunità come Junior .NET Developer o Specialista Cloud & Automation in contesti internazionali. Il mio obiettivo è contribuire a progetti ambiziosi unendo solide basi di sviluppo a una profonda conoscenza dell'ecosistema Microsoft. Se cerchi una professionista trilingue focalizzata su risultati concreti e codice pulito, mettiamoci in contatto.",
       networks: "Social",
       location: "Posizione",
       availability: "UTC+1 · Disponibile per lavoro remoto",

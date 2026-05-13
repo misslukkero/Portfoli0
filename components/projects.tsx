@@ -34,9 +34,9 @@ const projects: Project[] = [
       it: "Sharepoint come Documentale",
     },
     description: {
-      es: "Optimización de la gobernanza documental mediante sistemas centralizados de gestión. Facilitamos el control de versiones, la aprobación y distribución de procedimientos críticos para asegurar el cumplimiento normativo y la transparencia total ante los stakeholders de la organización.",
-      en: "Optimizing document governance through centralized management systems. We facilitate version control, approval, and distribution of critical procedures to ensure regulatory compliance and total transparency for organizational stakeholders.",
-      it: "Ottimizzazione della governance documentale attraverso sistemi di gestione centralizzati. Facilitiamo il controllo delle versioni, l'approvazione e la distribuzione di procedure critiche per garantire la conformità normativa e la totale trasparenza verso gli stakeholder.",
+      es: "Optimización de la gobernanza documental mediante sistemas centralizados de gestión. Facilitando el control de versiones, la aprobación y distribución de procedimientos críticos para asegurar el cumplimiento normativo y la transparencia total ante los stakeholders de la organización.",
+      en: "Optimizing document governance through centralized management systems. Facilitating version control, approval, and distribution of critical procedures to ensure regulatory compliance and total transparency for organizational stakeholders.",
+      it: "Ottimizzazione della governance documentale attraverso sistemi di gestione centralizzati. Facilitando il controllo delle versioni, l'approvazione e la distribuzione di procedure critiche per garantire la conformità normativa e la totale trasparenza verso gli stakeholder.",
     },
     tags: ["sharepoint", "powerAutomate", "azure"]
   },
@@ -48,9 +48,9 @@ const projects: Project[] = [
       it: "Gestione procedure aziendali con SharePoint",
     },
     description: {
-      es: "Despliegue de soluciones personalizadas sobre Microsoft SharePoint para la gestión avanzada de flujos operativos. Transformamos procesos internos en sistemas ágiles que garantizan la integridad de los datos, la escalabilidad del sistema y una experiencia de usuario intuitiva.",
-      en: "Deploying customized Microsoft SharePoint solutions for advanced operational workflow management. We transform internal processes into agile systems that ensure data integrity, system scalability, and an intuitive user experience.",
-      it: "Implementazione di soluzioni personalizzate su Microsoft SharePoint per la gestione avanzata dei flussi operativi. Trasformiamo i processi interni in sistemi agili che garantiscono l'integrità dei dati, la scalabilità del sistema e un'esperienza utente intuitiva.",
+      es: "Despliegue de soluciones personalizadas sobre Microsoft SharePoint para la gestión avanzada de flujos operativos. Transformando procesos internos en sistemas ágiles que garantizan la integridad de los datos, la escalabilidad del sistema y una experiencia de usuario intuitiva.",
+      en: "Deploying customized Microsoft SharePoint solutions for advanced operational workflow management. Transforming internal processes into agile systems that ensure data integrity, system scalability, and an intuitive user experience.",
+      it: "Implementazione di soluzioni personalizzate su Microsoft SharePoint per la gestione avanzata dei flussi operativi. Trasformando i processi interni in sistemi agili che garantiscono l'integrità dei dati, la scalabilità del sistema e un'esperienza utente intuitiva.",
     },
     tags: ["sharepoint", "powerAutomate", "azure"]
   },
@@ -62,9 +62,9 @@ const projects: Project[] = [
       it: "Power Automate: flussi di approvazione infiniti",
     },
     description: {
-      es: "Desarrollo de arquitecturas de aprobación complejas mediante Power Automate. Mitigamos riesgos operativos y errores humanos en tareas repetitivas, transformando procesos críticos en flujos digitales trazables que se adaptan a las exigencias de entornos altamente regulados.",
-      en: "Developing complex approval architectures using Power Automate. We mitigate operational risks and human error in repetitive tasks, transforming critical processes into traceable digital flows that adapt to the demands of highly regulated environments.",
-      it: "Sviluppo di architetture di approvazione complesse tramite Power Automate. Mitighiamo i rischi operativi e gli errori umani nelle attività ripetitive, trasformando i processi critici in flussi digitali tracciabili che si adattano alle esigenze di ambienti altamente regolamentati.",
+      es: "Desarrollo de arquitecturas de aprobación complejas mediante Power Automate. Mitigando riesgos operativos y errores humanos en tareas repetitivas, transformando procesos críticos en flujos digitales trazables que se adaptan a las exigencias de entornos altamente regulados.",
+      en: "Developing complex approval architectures using Power Automate. Mitigating operational risks and human error in repetitive tasks, transforming critical processes into traceable digital flows that adapt to the demands of highly regulated environments.",
+      it: "Sviluppo di architetture di approvazione complesse tramite Power Automate. Attenuando i rischi operativi e gli errori umani nelle attività ripetitive, trasformando i processi critici in flussi digitali tracciabili che si adattano alle esigenze di ambienti altamente regolamentati.",
     },
     tags: ["sharepoint", "powerAutomate", "azure"]
   },
@@ -76,9 +76,9 @@ const projects: Project[] = [
       it: "Digitalizzazione della gestione delle richieste interne con Power Apps",
     },
     description: {
-      es: "Optimización de la operativa interna mediante la automatización de tareas administrativas de bajo valor añadido. Desarrollamos soluciones digitales para la gestión de solicitudes que eliminan el uso de papel, reducen la carga de trabajo manual y garantizan un seguimiento preciso y ágil de cada petición.",
-      en: "Optimizing internal operations by automating low-value administrative tasks. We develop digital solutions for request management that eliminate paper usage, reduce manual workload, and ensure precise, agile tracking of every internal request.",
-      it: "Ottimizzazione dell'operatività interna attraverso l'automazione di attività amministrative a basso valore aggiunto. Sviluppiamo soluzioni digitali per la gestione delle richieste che eliminano l'uso della carta, riducono il carico di lavoro manuale e garantiscono un tracciamento preciso e agile di ogni istanza.",
+      es: "Optimización de la operativa interna mediante la automatización de tareas administrativas de bajo valor añadido. Desarrollando soluciones digitales para la gestión de solicitudes que eliminan el uso de papel, reducen la carga de trabajo manual y garantizan un seguimiento preciso y ágil de cada petición.",
+      en: "Optimizing internal operations by automating low-value administrative tasks. Developing digital solutions for request management that eliminate paper usage, reduce manual workload, and ensure precise, agile tracking of every internal request.",
+      it: "Ottimizzazione dell'operatività interna attraverso l'automazione di attività amministrative a basso valore aggiunto. Sviluppando soluzioni digitali per la gestione delle richieste che eliminano l'uso della carta, riducono il carico di lavoro manuale e garantiscono un tracciamento preciso e agile di ogni istanza.",
     },
     tags: ["sharepoint", "powerAutomate", "azure", "powerApps"]
   },
@@ -90,7 +90,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Título de sección */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -112,14 +112,14 @@ export function Projects() {
         {/* Lista de Proyectos */}
         <div className="grid grid-cols-1 gap-24">
           {projects.map((project) => (
-            <motion.article 
-              key={project.id} 
+            <motion.article
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="group border-b border-border pb-16"
             >
-              <div className="max-w-4xl"> 
+              <div className="max-w-4xl">
                 <div className="space-y-6">
                   {/* Título del proyecto */}
                   <h3 className="text-3xl md:text-4xl font-serif italic text-foreground group-hover:text-primary transition-colors">

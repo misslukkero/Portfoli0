@@ -5,7 +5,7 @@ import { useI18n, type Locale } from "@/lib/i18n"
 
 interface SkillCategory {
   id: string
-  titleKey: "cloud" | "scripting" | "documentation"
+  titleKey: "dev" | "cloud" | "infra" | "profskills"
   skills: {
     name: string
     description: Record<Locale, string>
@@ -14,92 +14,106 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
+    id: "dev",
+    titleKey: "dev",
+    skills: [
+      {
+        name: "Languages & Frameworks",
+        description: {
+          es: "Estudio activo de C# / .NET; experiencia práctica con TypeScript, Next.js y bases de JSON.",
+          en: "Active study of C# / .NET; practical experience with TypeScript, Next.js, and JSON foundations.",
+          it: "Studio attivo di C# / .NET; esperienza pratica con TypeScript, Next.js e basi di JSON.",
+        },
+      },
+      {
+        name: "Strumenti di Sviluppo",
+        description: {
+          es: "Visual Studio, Visual Studio Code, Vercel.",
+          en: "Visual Studio, Visual Studio Code, Vercel.",
+          it: "Visual Studio, Visual Studio Code, Vercel.",
+        },
+      },
+      {
+        name: "Version Control & ALM",
+        description: {
+          es: "Git (SourceTree/GitHub), gestión de repositorios y seguimiento de tareas en Azure DevOps.",
+          en: "Git (SourceTree/GitHub), repository management, and task tracking in Azure DevOps.",
+          it: "Git (SourceTree/GitHub), gestione di repository e tracking task in Azure DevOps.",
+        },
+      },
+      {
+        name: "Database",
+        description: {
+          es: "Dataverse (modelado de datos, relaciones lookup, llaves compuestas) y bases de SQL.",
+          en: "Dataverse (data modeling, lookup/calculated columns, composite keys) and SQL foundations.",
+          it: "Dataverse (modellazione dati, relazioni lookup, chiavi composte) e basi di SQL.",
+        },
+      },
+    ],
+   }, 
+   {
     id: "cloud",
     titleKey: "cloud",
     skills: [
       {
-        name: "Microsoft 365 Administration",
-        description: {
-          es: "Configuración de SharePoint Online, listas, librerías y gestión de permisos",
-          en: "SharePoint Online configuration, lists, libraries and permission management",
-          it: "Configurazione SharePoint Online, liste, librerie e gestione permessi",
-        },
-      },
-      {
-        name: "Microsoft Entra ID",
-        description: {
-          es: "Gestión de usuarios y grupos en entornos empresariales",
-          en: "User and group management in enterprise environments",
-          it: "Gestione utenti e gruppi in ambienti aziendali",
-        },
-      },
-      {
         name: "Azure Logic Apps",
         description: {
-          es: "Implementación de workflows empresariales automatizados",
-          en: "Implementation of automated business workflows",
-          it: "Implementazione di workflow aziendali automatizzati",
+          es: "Diseño e implementación de flujos de trabajo empresariales complejos.",
+          en: "Design and implementation of complex enterprise workflows.",
+          it: "Progettazione e implementazione di workflow aziendali complessi.",
         },
       },
       {
-        name: "Power Automate",
+        name: "Power Platform",
         description: {
-          es: "Diseño y ejecución de flujos de automatización",
-          en: "Design and execution of automation flows",
-          it: "Progettazione ed esecuzione di flussi di automazione",
+          es: "Desarrollo de flujos con Power Automate y gestión de soluciones en Power Apps.",
+          en: "Flow development with Power Automate and solution management in Power Apps.",
+          it: "Sviluppo di flussi con Power Automate e gestione di soluzioni in Power Apps.",
         },
       },
       {
-        name: "Security & Access",
+        name: "Scripting",
         description: {
-          es: "Gestión MFA, MS Defender y administración de accesos externos",
-          en: "MFA management, MS Defender and external access administration",
-          it: "Gestione MFA, MS Defender e amministrazione accessi esterni",
+          es: "PowerShell (CSOM/SPO) para actualizaciones masivas de datos y automatización de SharePoint.",
+          en: "PowerShell (CSOM/SPO) for mass data updates and SharePoint automation.",
+          it: "PowerShell (CSOM/SPO) per automazione di task massivi e gestione SharePoint.",
         },
       },
     ],
   },
   {
-    id: "scripting",
-    titleKey: "scripting",
+    id: "infra",
+    titleKey: "infra",
     skills: [
       {
-        name: "PowerShell (CSOM/SPO)",
+        name: "Microsoft 365 Administration",
         description: {
-          es: "Scripts para modificación masiva de datos y automatización en SharePoint",
-          en: "Scripts for bulk data modification and SharePoint automation",
-          it: "Script per modifica massiva dati e automazione SharePoint",
+          es: "Configuración avanzada de SharePoint Online (arquitectura de información, permisos y gobernanza).",
+          en: "Advanced SharePoint Online configuration (information architecture, permissions, and governance).",
+          it: "Configurazione avanzata di SharePoint Online (architettura dell'informazione, permessi e governance).",
         },
       },
       {
-        name: "Dataverse",
+        name: "Identity & Security",
         description: {
-          es: "Creación de tablas, columnas Lookup/Calcolate y claves compuestas",
-          en: "Table creation, Lookup/Calculated columns and composite keys",
-          it: "Creazione tabelle, colonne Lookup/Calcolate e chiavi composte",
+          es: "Microsoft Entra ID (anteriormente Azure AD), gestión de MFA y administración de accesos externos.",
+          en: "Microsoft Entra ID (formerly Azure AD), MFA management, and external access administration.",
+          it: "Microsoft Entra ID (ex Azure AD), gestione MFA e amministrazione accessi per utenti esterni.",
         },
       },
       {
-        name: "Azure DevOps",
+        name: "Microsoft Defender",
         description: {
-          es: "Tracking de tareas, gestión Git y supervisión de pipelines",
-          en: "Task tracking, Git management and pipeline supervision",
-          it: "Tracking task, gestione Git e supervisione pipeline",
-        },
-      },
-      {
-        name: "C# / Visual Studio",
-        description: {
-          es: "Intervenciones técnicas en código para Event Receivers",
-          en: "Technical code interventions for Event Receivers",
-          it: "Interventi tecnici su codice per Event Receivers",
+          es: "Configuración de Safe Senders y protocolos de seguridad de correo.",
+          en: "Safe Senders configuration and email security protocols.",
+          it: "Configurazione Safe Senders e protocolli di sicurezza email.",
         },
       },
     ],
   },
   {
-    id: "documentation",
-    titleKey: "documentation",
+    id: "profskills",
+    titleKey: "profskills",
     skills: [
       {
         name: "Technical Writing",
@@ -117,6 +131,14 @@ const skillCategories: SkillCategory[] = [
           it: "Risoluzione incidenti tecnici (Livello 2) con ServiceNow",
         },
       },
+      {
+        name: "Agile & Collaborative Workflow",
+        description: {
+          es: "Experiencia trabajando en marcos Ágiles (Scrum/Kanban) dentro de equipos internacionales.",
+          en: "Experience working in Agile frameworks (Scrum/Kanban) within international teams.",
+          it: "Esperienza di lavoro in framework Agile (Scrum/Kanban) all'interno di team internazionali.",
+        },
+      },
     ],
   },
 ]
@@ -132,7 +154,7 @@ export function SkillsSection() {
   const { locale, t } = useI18n()
 
   return (
-    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 bg-card/50">
+    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 bg-card/50" >
       <div className="max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
@@ -213,6 +235,6 @@ export function SkillsSection() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </section >
   )
 }
