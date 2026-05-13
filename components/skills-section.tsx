@@ -5,7 +5,7 @@ import { useI18n, type Locale } from "@/lib/i18n"
 
 interface SkillCategory {
   id: string
-  titleKey: "cloud" | "scripting" | "documentation"
+  titleKey: "dev" | "cloud" | "infra" | "profskills"
   skills: {
     name: string
     description: Record<Locale, string>
