@@ -102,14 +102,6 @@ const skillCategories: SkillCategory[] = [
         },
       },
       {
-        name: "Azure DevOps",
-        description: {
-          es: "Tracking de tareas, gestión Git y supervisión de pipelines",
-          en: "Task tracking, Git management and pipeline supervision",
-          it: "Tracking task, gestione Git e supervisione pipeline",
-        },
-      },
-      {
         name: "Microsoft Defender",
         description: {
           es: "Configuración de Safe Senders y protocolos de seguridad de correo.",
