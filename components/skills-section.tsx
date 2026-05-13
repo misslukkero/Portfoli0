@@ -131,6 +131,14 @@ const skillCategories: SkillCategory[] = [
           it: "Risoluzione incidenti tecnici (Livello 2) con ServiceNow",
         },
       },
+      {
+        name: "Agile & Collaborative Workflow",
+        description: {
+          es: "Experiencia trabajando en marcos Ágiles (Scrum/Kanban) dentro de equipos internacionales.",
+          en: "Experience working in Agile frameworks (Scrum/Kanban) within international teams.",
+          it: "Esperienza di lavoro in framework Agile (Scrum/Kanban) all'interno di team internazionali.",
+        },
+      },
     ],
   },
 ]
