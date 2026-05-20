@@ -62,6 +62,7 @@ export interface Translations {
       azure: string
       forms: string
       devops: string
+      nextjs: string;
     }
   }
   contact: {
@@ -141,6 +142,7 @@ const translations: Record<Locale, Translations> = {
         azure: "Azure",
         forms: "Microsoft Forms",
         devops: "DevOps",
+        nextjs: "Next.js"
       },
     },
     contact: {
@@ -218,6 +220,7 @@ const translations: Record<Locale, Translations> = {
         azure: "Azure",
         forms: "Microsoft Forms",
         devops: "DevOps",
+        nextjs: "Next.js",
       },
     },
     contact: {
@@ -294,6 +297,7 @@ const translations: Record<Locale, Translations> = {
         azure: "Azure",
         forms: "Microsoft Forms",
         devops: "DevOps",
+        nextjs: "Next.js",
       },
     },
     contact: {
