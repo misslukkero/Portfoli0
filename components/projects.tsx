@@ -81,7 +81,21 @@ const projects: Project[] = [
       it: "Ottimizzazione dell'operatività interna attraverso l'automazione di attività amministrative a basso valore aggiunto. Sviluppando soluzioni digitali per la gestione delle richieste che eliminano l'uso della carta, riducono il carico di lavoro manuale e garantiscono un tracciamento preciso e agile di ogni istanza.",
     },
     tags: ["sharepoint", "powerAutomate", "azure", "powerApps"]
-  },
+   },
+  {
+    id: "p6",
+    name: {
+      es: "Ticketera IT: Gestión de Incidencias",
+      en: "Ticketera IT: Incident Management System",
+      it: "Ticketera IT: Gestione degli Incidenti",
+    },
+    description: {
+      es: "Sistema Full-Stack de gestión de tickets. Backend en .NET Core desplegado en Azure y Frontend en Next.js. Automatización de flujos de resolución con despliegue continuo (CI/CD).",
+      en: "Full-Stack ticket management system. .NET Core backend deployed on Azure and Next.js frontend. Automated resolution workflows with continuous deployment (CI/CD).",
+      it: "Sistema Full-Stack di gestione dei ticket. Backend in .NET Core distribuito su Azure e Frontend in Next.js. Flussi di risoluzione automatizzati con distribuzione continua (CI/CD).",
+    },
+    tags: ["azure", "devops", "nextjs"] 
+},
 ]
 
 export function Projects() {
