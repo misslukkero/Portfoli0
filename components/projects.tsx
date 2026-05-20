@@ -137,9 +137,10 @@ export function Projects() {
                 <div className="space-y-6">
                   {/* Título del proyecto */}
                   <h3 className="text-3xl md:text-4xl font-serif italic text-foreground group-hover:text-primary transition-colors">
-                    {project.name[locale]}
+                    <a href="https://ticketera-daiana.vercel.app" target="_blank" rel="noopener noreferrer">
+                    {project.name[locale]} ↗
+                  </a>
                   </h3>
-
                   {/* Descripción */}
                   <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
                     {project.description[locale]}
