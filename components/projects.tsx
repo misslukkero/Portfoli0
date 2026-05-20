@@ -96,7 +96,7 @@ const projects: Project[] = [
       it: "Sistema Full-Stack di gestione dei ticket. Backend in .NET Core distribuito su Azure e Frontend in Next.js. Flussi di risoluzione automatizzati con distribuzione continua (CI/CD).",
     },
     tags: ["azure", "devops", "nextjs"], 
-    link: {"https://ticketera-daiana.vercel.app"  },
+    link: "https://ticketera-daiana.vercel.app",
  },
 ]
 
@@ -139,22 +139,21 @@ export function Projects() {
                 <div className="space-y-6">
                   {/* Título del proyecto */}
                   <h3 className="text-3xl md:text-4xl font-serif italic text-foreground transition-colors">
-                    {project.link ? (
-                <a 
-                  href={project.link} 
+                    {project.link && project.link.trim() !== "" ? (
+                <a href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group-hover:text-primary transition-colors"
-            >
-              {project.name[locale]} ↗
-              </a>
-              ) : (
-              <span className="text-foreground">
-              {project.name[locale]}
-            </span>
-            )}
-          </h3>
-
+                 >
+                {project.name[locale]} ↗
+                </a>
+                ) : (
+                <span className="text-foreground">
+                {project.name[locale]}
+                </span>
+                )}
+                  </h3>
+                  
                   {/* Descripción */}
                   <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
                     {project.description[locale]}
