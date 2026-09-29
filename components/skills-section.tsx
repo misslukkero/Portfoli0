@@ -144,7 +144,7 @@ const skillCategories: SkillCategory[] = [
   },
 ]
 
-function ProfessionalSkills({
+function InteractiveSkills({
   skills,
   locale,
   activeSkill,
@@ -202,7 +202,12 @@ const certifications = [
 
 export function SkillsSection() {
   const { locale, t } = useI18n()
-  const [activeProfessionalSkill, setActiveProfessionalSkill] = useState(0)
+  const [activeSkills, setActiveSkills] = useState<Record<string, number>>({
+    dev: 0,
+    cloud: 0,
+    infra: 0,
+    profskills: 0,
+  })
 
   return (
     <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 bg-card/50" >
@@ -232,34 +237,14 @@ export function SkillsSection() {
               <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
                 {t.skills.categories[category.titleKey]}
               </h3>
-              {category.id === "profskills" ? (
-                <ProfessionalSkills
-                  skills={category.skills}
-                  locale={locale}
-                  activeSkill={activeProfessionalSkill}
-                  onSkillChange={setActiveProfessionalSkill}
-                />
-              ) : (
-                <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
-                      className="group py-4 border-b border-border"
-                    >
-                      <h4 className="text-foreground font-medium mb-2 group-hover:text-primary transition-colors">
-                        {skill.name}
-                      </h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {skill.description[locale]}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              )}
+              <InteractiveSkills
+                skills={category.skills}
+                locale={locale}
+                activeSkill={activeSkills[category.id] ?? 0}
+                onSkillChange={(index) =>
+                  setActiveSkills((current) => ({ ...current, [category.id]: index }))
+                }
+              />
             </motion.div>
           ))}
         </div>
