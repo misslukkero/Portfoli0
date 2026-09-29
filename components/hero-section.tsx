@@ -10,6 +10,11 @@ export function HeroSection() {
   return (
     <section id="about" className="relative min-h-[92svh] overflow-hidden px-6 pb-24 pt-32 md:px-12 lg:px-24">
       <div className="w-full max-w-6xl mx-auto">
+        <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary">
+          <span>01</span>
+          <span className="h-px w-10 bg-primary/60" />
+          <span>Who I Am</span>
+        </div>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         
           <motion.div

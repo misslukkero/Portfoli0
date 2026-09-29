@@ -19,6 +19,9 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-foreground px-6 py-32 text-background md:px-12 lg:px-24">
       <div className="w-full max-w-6xl">
+        <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary">
+          <span>05</span><span className="h-px w-10 bg-primary/60" /><span>What's Next</span>
+        </div>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

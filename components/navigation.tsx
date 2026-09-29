@@ -18,11 +18,11 @@ const navItems: NavItem[] = [
 ]
 
 const progressItems = [
-  { id: "work", number: "01", label: "EXPERIENCE" },
-  { id: "skills", number: "02", label: "SKILLS" },
-  { id: "projects", number: "03", label: "PROJECTS" },
-  { id: "education", number: "04", label: "EDUCATION" },
-  { id: "contact", number: "05", label: "CONTACT" },
+  { id: "about", number: "01", label: "WHO I AM" },
+  { id: "work", number: "02", label: "WHERE I COME FROM" },
+  { id: "skills", number: "03", label: "WHAT I KNOW" },
+  { id: "projects", number: "04", label: "WHAT I BUILD" },
+  { id: "contact", number: "05", label: "WHAT'S NEXT" },
 ] as const
 
 function ProgressNavigation({ activeSection, onNavigate }: { activeSection: string; onNavigate: (id: string) => void }) {
