@@ -210,7 +210,7 @@ export function SkillsSection() {
   })
 
   return (
-    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 bg-card/50" >
+    <section id="skills" className="relative min-h-screen border-t border-border/60 bg-card/50 px-6 py-32 md:px-12 lg:px-24">
       <div className="max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
@@ -255,7 +255,7 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-24 pt-16 border-t border-border"
+          id="education" className="mt-32 border-t border-border pt-16"
         >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
             {locale === "es" ? "Formación" : locale === "en" ? "Education" : "Formazione"}

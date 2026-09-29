@@ -21,7 +21,7 @@ const progressItems = [
   { id: "work", number: "01", label: "EXPERIENCE" },
   { id: "skills", number: "02", label: "SKILLS" },
   { id: "projects", number: "03", label: "PROJECTS" },
-  { id: "about", number: "04", label: "BACKGROUND" },
+  { id: "education", number: "04", label: "EDUCATION" },
   { id: "contact", number: "05", label: "CONTACT" },
 ] as const
 
@@ -72,7 +72,7 @@ export function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      const sections = navItems.map((item) => {
+      const sections = progressItems.map((item) => {
         const element = document.getElementById(item.id)
         if (element) {
           const rect = element.getBoundingClientRect()

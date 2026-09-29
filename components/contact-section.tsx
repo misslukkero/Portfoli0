@@ -17,8 +17,8 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl">
+    <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-foreground px-6 py-32 text-background md:px-12 lg:px-24">
+      <div className="w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -57,7 +57,7 @@ export function ContactSection() {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Email</p>
               <button onClick={copyEmail}
                 className="group flex items-center gap-2 border-b border-transparent group-hover:border-primary pb-1 transition-colors">
-                <span className="text-foreground">{email}</span>
+                <span className="text-background">{email}</span>
                 <motion.span
                   animate={{ opacity: copied ? 0 : 1 }}
                   className="text-muted-foreground group-hover:text-primary"
@@ -82,7 +82,7 @@ export function ContactSection() {
             {/* Phone */}
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Phone</p>
-              <p className="text-foreground">{phone}</p>
+              <p className="text-background">{phone}</p>
             </div>
 
           </motion.div>
@@ -135,7 +135,7 @@ export function ContactSection() {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 {t.contact.location}
               </p>
-              <p className="text-foreground">Pesaro, Marche, Italia</p>
+              <p className="text-background">Pesaro, Marche, Italia</p>
               <p className="text-muted-foreground text-sm mt-1">{t.contact.availability}</p>
             </div>
           </motion.div>

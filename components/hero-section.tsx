@@ -8,9 +8,9 @@ export function HeroSection() {
   const { t } = useI18n()
 
   return (
-    <section id="about" className="min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-32 pb-20">
+    <section id="about" className="relative min-h-[92svh] overflow-hidden px-6 pb-24 pt-32 md:px-12 lg:px-24">
       <div className="w-full max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

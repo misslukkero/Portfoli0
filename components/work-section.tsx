@@ -129,7 +129,7 @@ export function WorkSection() {
   const { locale, t } = useI18n()
 
   return (
-    <section id="work" className="py-32 px-6 md:px-12 lg:px-24">
+    <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 py-32 md:px-12 lg:px-24">
       <div className="max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
@@ -152,7 +152,7 @@ export function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group grid md:grid-cols-[200px_1fr] gap-8 py-12 border-t border-border"
+              className="group relative grid gap-8 border-t border-border py-14 md:grid-cols-[220px_1fr] md:gap-12"
             >
               {/* Left column - Date & Location */}
               <div className="space-y-2">

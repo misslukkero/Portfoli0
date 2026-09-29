@@ -62,7 +62,7 @@ export function Projects() {
   const { locale, t } = useI18n()
 
   return (
-    <section id="projects" className="py-32 px-6 md:px-12 lg:px-24">
+    <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 py-32 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto">
 
         {/* Título de sección */}
@@ -84,7 +84,7 @@ export function Projects() {
         </motion.div>
 
         {/* Lista de Proyectos */}
-        <div className="grid grid-cols-1 gap-24">
+        <div className="grid grid-cols-1 gap-24 md:gap-32">
           {projects.map((project) => (
             <motion.article
               key={project.id}
