@@ -42,48 +42,6 @@ const projects: Project[] = [
     tags: ["sharepoint", "powerAutomate", "azure"]
   },
   {
-    id: "p3",
-    name: {
-      es: "Gestión de procedimientos empresariales con SharePoint",
-      en: "Business Procedure Management Solutions with SharePoint",
-      it: "Gestione procedure aziendali con SharePoint",
-    },
-    description: {
-      es: "Despliegue de soluciones personalizadas sobre Microsoft SharePoint para la gestión avanzada de flujos operativos. Transformando procesos internos en sistemas ágiles que garantizan la integridad de los datos, la escalabilidad del sistema y una experiencia de usuario intuitiva.",
-      en: "Deploying customized Microsoft SharePoint solutions for advanced operational workflow management. Transforming internal processes into agile systems that ensure data integrity, system scalability, and an intuitive user experience.",
-      it: "Implementazione di soluzioni personalizzate su Microsoft SharePoint per la gestione avanzata dei flussi operativi. Trasformando i processi interni in sistemi agili che garantiscono l'integrità dei dati, la scalabilità del sistema e un'esperienza utente intuitiva.",
-    },
-    tags: ["sharepoint", "powerAutomate", "azure"]
-  },
-  {
-    id: "p4",
-    name: {
-      es: "Power Automate: Flujos de aprobación infinitos",
-      en: "Power Automate: Advanced Multi-Stage Approval Workflows",
-      it: "Power Automate: flussi di approvazione infiniti",
-    },
-    description: {
-      es: "Desarrollo de arquitecturas de aprobación complejas mediante Power Automate. Mitigando riesgos operativos y errores humanos en tareas repetitivas, transformando procesos críticos en flujos digitales trazables que se adaptan a las exigencias de entornos altamente regulados.",
-      en: "Developing complex approval architectures using Power Automate. Mitigating operational risks and human error in repetitive tasks, transforming critical processes into traceable digital flows that adapt to the demands of highly regulated environments.",
-      it: "Sviluppo di architetture di approvazione complesse tramite Power Automate. Attenuando i rischi operativi e gli errori umani nelle attività ripetitive, trasformando i processi critici in flussi digitali tracciabili che si adattano alle esigenze di ambienti altamente regolamentati.",
-    },
-    tags: ["sharepoint", "powerAutomate", "azure"]
-  },
-  {
-    id: "p5",
-    name: {
-      es: "Digitalización de la gestión de solicitudes internas con Power Apps",
-      en: "Digitizing Internal Request Management with Power Apps",
-      it: "Digitalizzazione della gestione delle richieste interne con Power Apps",
-    },
-    description: {
-      es: "Optimización de la operativa interna mediante la automatización de tareas administrativas de bajo valor añadido. Desarrollando soluciones digitales para la gestión de solicitudes que eliminan el uso de papel, reducen la carga de trabajo manual y garantizan un seguimiento preciso y ágil de cada petición.",
-      en: "Optimizing internal operations by automating low-value administrative tasks. Developing digital solutions for request management that eliminate paper usage, reduce manual workload, and ensure precise, agile tracking of every internal request.",
-      it: "Ottimizzazione dell'operatività interna attraverso l'automazione di attività amministrative a basso valore aggiunto. Sviluppando soluzioni digitali per la gestione delle richieste che eliminano l'uso della carta, riducono il carico di lavoro manuale e garantiscono un tracciamento preciso e agile di ogni istanza.",
-    },
-    tags: ["sharepoint", "powerAutomate", "azure", "powerApps"]
-   },
-  {
     id: "p6",
     name: {
       es: "Ticketera IT: Gestión de Incidencias",
