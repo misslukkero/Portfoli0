@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState } from "react"
 import { useI18n, type Locale } from "@/lib/i18n"
 
 interface SkillCategory {
@@ -143,6 +144,55 @@ const skillCategories: SkillCategory[] = [
   },
 ]
 
+function ProfessionalSkills({
+  skills,
+  locale,
+  activeSkill,
+  onSkillChange,
+}: {
+  skills: SkillCategory["skills"]
+  locale: Locale
+  activeSkill: number
+  onSkillChange: (index: number) => void
+}) {
+  const activeDescription = skills[activeSkill]?.description[locale]
+
+  return (
+    <div className="grid gap-8 md:grid-cols-[1fr_1.15fr] md:items-start">
+      <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
+        {skills.map((skill, index) => {
+          const isActive = activeSkill === index
+
+          return (
+            <button
+              key={skill.name}
+              type="button"
+              onClick={() => onSkillChange(index)}
+              onMouseEnter={() => onSkillChange(index)}
+              aria-pressed={isActive}
+              className={`group flex items-center gap-4 border-b px-0 py-4 text-left transition-colors ${
+                isActive ? "border-primary text-foreground" : "border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <span className={`font-mono text-xs transition-colors ${isActive ? "text-primary" : "text-muted-foreground/60"}`}>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="text-base font-medium">{skill.name}</span>
+              <span aria-hidden="true" className={`ml-auto transition-transform ${isActive ? "translate-x-1 text-primary" : "text-muted-foreground/50 group-hover:translate-x-1"}`}>
+                →
+              </span>
+            </button>
+          )
+        })}
+      </div>
+      <div className="min-h-32 border-l border-primary/40 pl-6 md:min-h-40 md:pl-8">
+        <span className="font-mono text-xs tracking-[0.2em] text-primary">DESCRIPTION</span>
+        <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">{activeDescription}</p>
+      </div>
+    </div>
+  )
+}
+
 const certifications = [
   { name: "Developer (364h)", institution: "ISPC, Argentina", year: "2023" },
   { name: "Full Stack Junior Developer (300h)", institution: "ISPC, Argentina", year: "2023" },
@@ -152,6 +202,7 @@ const certifications = [
 
 export function SkillsSection() {
   const { locale, t } = useI18n()
+  const [activeProfessionalSkill, setActiveProfessionalSkill] = useState(0)
 
   return (
     <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 bg-card/50" >
@@ -181,25 +232,34 @@ export function SkillsSection() {
               <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
                 {t.skills.categories[category.titleKey]}
               </h3>
-              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
-                    className="group py-4 border-b border-border"
-                  >
-                    <h4 className="text-foreground font-medium mb-2 group-hover:text-primary transition-colors">
-                      {skill.name}
-                    </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {skill.description[locale]}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
+              {category.id === "profskills" ? (
+                <ProfessionalSkills
+                  skills={category.skills}
+                  locale={locale}
+                  activeSkill={activeProfessionalSkill}
+                  onSkillChange={setActiveProfessionalSkill}
+                />
+              ) : (
+                <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
+                      className="group py-4 border-b border-border"
+                    >
+                      <h4 className="text-foreground font-medium mb-2 group-hover:text-primary transition-colors">
+                        {skill.name}
+                      </h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {skill.description[locale]}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
