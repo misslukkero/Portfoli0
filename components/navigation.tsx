@@ -10,12 +10,57 @@ interface NavItem {
   }
 
 const navItems: NavItem[] = [
-  { id: "about", labelKey: "about"},
-  { id: "work", labelKey: "experience"},
-  { id: "skills", labelKey: "skills"},
-  { id: "projects", labelKey: "projects"},
-  { id: "contact", labelKey: "contact"},
+  { id: "about", labelKey: "about" },
+  { id: "work", labelKey: "experience" },
+  { id: "skills", labelKey: "skills" },
+  { id: "projects", labelKey: "projects" },
+  { id: "contact", labelKey: "contact" },
 ]
+
+const progressItems = [
+  { id: "work", number: "01", label: "EXPERIENCE" },
+  { id: "skills", number: "02", label: "SKILLS" },
+  { id: "projects", number: "03", label: "PROJECTS" },
+  { id: "about", number: "04", label: "BACKGROUND" },
+  { id: "contact", number: "05", label: "CONTACT" },
+] as const
+
+function ProgressNavigation({ activeSection, onNavigate }: { activeSection: string; onNavigate: (id: string) => void }) {
+  return (
+    <aside aria-label="Page progress" className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 md:block">
+      <div className="relative flex flex-col gap-5 border-l border-border/70 py-1 pl-4">
+        {progressItems.map((item) => {
+          const isActive = activeSection === item.id
+
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => onNavigate(item.id)}
+              aria-current={isActive ? "location" : undefined}
+              aria-label={`Go to ${item.label.toLowerCase()}`}
+              className="group relative flex items-center gap-3 text-left font-mono text-[10px] tracking-[0.16em]"
+            >
+              <span
+                aria-hidden="true"
+                className={`absolute -left-[21px] size-2 rounded-full border transition-all duration-300 ${
+                  isActive ? "border-primary bg-primary" : "border-muted-foreground/60 bg-background group-hover:border-foreground"
+                }`}
+              />
+              <span className={`transition-colors ${isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"}`}>
+                {item.number}
+              </span>
+              <span className={`whitespace-nowrap transition-all duration-300 ${isActive ? "translate-x-0 text-foreground opacity-100" : "-translate-x-1 text-muted-foreground/60 opacity-70 group-hover:translate-x-0 group-hover:text-foreground group-hover:opacity-100"}`}>
+                <span aria-hidden="true" className="mr-2 text-border">—</span>
+                {item.label}
+              </span>
+            </button>
+          )
+        })}
+      </div>
+    </aside>
+  )
+}
 
 export function Navigation() {
   const { locale, setLocale, t } = useI18n()
@@ -60,7 +105,9 @@ export function Navigation() {
   }
 
   return (
-    <motion.header
+    <>
+      <ProgressNavigation activeSection={activeSection} onNavigate={scrollTo} />
+      <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5 }}
@@ -146,6 +193,7 @@ export function Navigation() {
           </div>
         </div>
       </nav>
-    </motion.header>
+      </motion.header>
+    </>
   )
 }
