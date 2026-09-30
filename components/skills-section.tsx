@@ -204,6 +204,7 @@ const certifications = [
 
 export function SkillsSection() {
   const { locale, t } = useI18n()
+  const [expandedEducation, setExpandedEducation] = useState<number | null>(null)
   const [activeSkills, setActiveSkills] = useState<Record<string, number>>({
     dev: 0,
     cloud: 0,
@@ -258,28 +259,26 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          id="education" className="mt-16 border-t border-border pt-10"
+          id="education" className="mt-8 border-t border-border pt-8"
         >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
             {locale === "es" ? "Formación" : locale === "en" ? "Education" : "Formazione"}
           </h3>
-          <div className="grid gap-x-10 gap-y-1 md:grid-cols-2">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.name}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-start justify-between gap-4 py-4 border-b border-border"
-              >
-                <div>
-                  <p className="text-foreground">{cert.name}</p>
-                  <p className="text-muted-foreground text-sm">{cert.institution}</p>
+          <div className="flex flex-col border-y border-border">
+            {certifications.map((cert, index) => {
+              const isExpanded = expandedEducation === index
+              return (
+                <div key={cert.name} className="border-b border-border last:border-b-0">
+                  <button type="button" aria-expanded={isExpanded} onClick={() => setExpandedEducation(isExpanded ? null : index)} className="flex w-full items-center justify-between gap-4 py-4 text-left">
+                    <span className="flex items-baseline gap-4"><span className="font-mono text-xs text-primary">{cert.year}</span><span className="text-foreground">{cert.name}</span></span>
+                    <span aria-hidden="true" className="font-mono text-primary">{isExpanded ? "−" : "+"}</span>
+                  </button>
+                  <div className={`grid transition-[grid-template-rows] duration-300 ${isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                    <p className="overflow-hidden pb-0 text-sm text-muted-foreground"><span className="block pb-4 pl-14">{cert.institution}</span></p>
+                  </div>
                 </div>
-                <span className="font-mono text-sm text-primary shrink-0">{cert.year}</span>
-              </motion.div>
-            ))}
+              )
+            })}
           </div>
         </motion.div>
       </div>

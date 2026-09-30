@@ -24,7 +24,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-10"
         >
           <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase"></span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic mt-4 max-w-xl">
@@ -33,7 +33,7 @@ export function ContactSection() {
         </motion.div>
 
         <motion.p
-          className="text-muted-foreground text-lg max-w-xl mb-16 leading-relaxed"
+          className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -57,7 +57,7 @@ export function ContactSection() {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Email</p>
               <button onClick={copyEmail}
                 className="group flex items-center gap-2 border-b border-transparent group-hover:border-primary pb-1 transition-colors">
-                <span className="text-foreground">{email}</span>
+                <span className="text-xl text-foreground md:text-2xl">{email}</span>
                 <motion.span
                   animate={{ opacity: copied ? 0 : 1 }}
                   className="text-muted-foreground group-hover:text-primary"
@@ -82,7 +82,7 @@ export function ContactSection() {
             {/* Phone */}
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Phone</p>
-              <p className="text-foreground">{phone}</p>
+              <p className="border-b border-border py-3 text-foreground">{phone}</p>
             </div>
 
           </motion.div>
@@ -96,18 +96,18 @@ export function ContactSection() {
           >
             {/* Links */}
 {/* Links */}
-<div className="flex flex-col gap-6"> 
+<div className="divide-y divide-border border-y border-border"> 
   <div>
     <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
       {t.contact.networks}
     </p>
-    <div className="flex flex-col gap-3"> {/* Contenedor para los enlaces individuales */}
+    <div className="flex flex-col"> {/* Contenedor para los enlaces individuales */}
       
       {/* LinkedIn */}
       <a href="https://linkedin.com/in/daianasenese/"
         target="_blank"
         rel="noopener noreferrer"
-        className="group inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        className="group inline-flex items-center justify-between border-b border-border py-3 text-foreground transition-colors hover:text-primary"
       >
         <span>LinkedIn</span>
         <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +119,7 @@ export function ContactSection() {
       <a href="https://github.com/misslukkero" 
         target="_blank"
         rel="noopener noreferrer"
-        className="group inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        className="group inline-flex items-center justify-between border-b border-border py-3 text-foreground transition-colors hover:text-primary"
       >
         <span>GitHub</span>
         <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

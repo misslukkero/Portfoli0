@@ -30,7 +30,7 @@ function ProgressNavigation({ activeSection, onNavigate, labels }: { activeSecti
   const activeLabel = labels[activeItem.key]
 
   return (
-    <aside aria-label="Page progress" className="group fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:right-8">
+    <aside aria-label="Page progress" className="group fixed right-3 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:right-6">
       <button
         type="button"
         onClick={() => onNavigate(activeItem.id)}
@@ -43,15 +43,12 @@ function ProgressNavigation({ activeSection, onNavigate, labels }: { activeSecti
         <span className="h-px w-5 bg-border transition-colors group-hover:bg-primary/60" />
         <span className="whitespace-nowrap text-foreground">{activeLabel}</span>
       </button>
-      <nav aria-label="Navigate chapters" className="pointer-events-none absolute right-0 top-1/2 flex w-max -translate-y-1/2 translate-x-3 flex-col gap-1 rounded-2xl border border-border/70 bg-background/95 p-2 opacity-0 shadow-lg backdrop-blur-md transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
-        {progressItems.map((item) => {
-          const isActive = item.id === activeSection
-          return (
-            <button key={item.id} type="button" onClick={() => onNavigate(item.id)} aria-current={isActive ? "location" : undefined} className={`flex items-center gap-3 whitespace-nowrap rounded-xl px-3 py-2 text-left font-mono text-[10px] tracking-[0.14em] transition-colors ${isActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-secondary hover:text-foreground"}`}>
-              <span>{item.number}</span><span>{labels[item.key]}</span>
-            </button>
-          )
-        })}
+      <nav aria-label="Navigate chapters" className="pointer-events-none absolute right-full top-1/2 mr-3 flex w-max -translate-y-1/2 flex-col gap-1 rounded-2xl border border-border/70 bg-background/95 p-2 opacity-0 shadow-lg backdrop-blur-md transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100">
+        {progressItems.filter((item) => item.id !== activeSection).map((item) => (
+          <button key={item.id} type="button" onClick={() => onNavigate(item.id)} className="flex items-center gap-3 whitespace-nowrap rounded-xl px-3 py-2 text-left font-mono text-[10px] tracking-[0.14em] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+            <span>{item.number}</span><span>{labels[item.key]}</span>
+          </button>
+        ))}
       </nav>
     </aside>
   )
