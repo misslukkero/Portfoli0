@@ -47,7 +47,7 @@ export function HeroSection() {
   <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary mb-4">
   {t.hero.statementLabel}
   </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-foreground">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-primary">
         Daiana Senese
         </h1>
         </motion.div>
