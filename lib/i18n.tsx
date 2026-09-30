@@ -20,8 +20,9 @@ export interface Translations {
     contact: string
   }
   hero: {
-    greeting: string
-    title: string
+  greeting: string
+  statementLabel: string
+  title: string
     titleHighlight: string
     titleEnd: string
     description: string
@@ -47,9 +48,10 @@ export interface Translations {
   skills: {
     subtitle: string
     title: string
-    titleHighlight: string
-    categories: {
-      dev: string
+  titleHighlight: string
+  descriptionLabel: string
+  categories: {
+  dev: string
       cloud: string
       infra: string
       profskills: string
@@ -59,6 +61,8 @@ export interface Translations {
     subtitle: string
     title: string
     titleHighlight: string
+    previousProject: string
+    nextProject: string
     // Definicion de las llaves de las tecnologías como tags
     tech: {
       sharepoint: string
@@ -97,7 +101,7 @@ const translations: Record<Locale, Translations> = {
       from: "De dónde vengo",
       know: "Lo que sé",
       build: "Lo que construyo",
-      next: "Qué sigue",
+      next: "Hablemos",
     },
     nav: {
       about: "Sobre mí",
@@ -108,6 +112,7 @@ const translations: Record<Locale, Translations> = {
     },
     hero: {
       greeting: "Hola, soy",
+      statementLabel: "Una declaración profesional",
       title: "Soy ",
       titleHighlight: "Desarrolladora de software - Construyendo soluciones de software y automatización dentro del ecosistema Microsoft",
       titleEnd: ". Especializada en Microsoft 365 y Azure, ayudo a las empresas a optimizar sus procesos mediante soluciones de automatización.",
@@ -134,8 +139,9 @@ const translations: Record<Locale, Translations> = {
     skills: {
       subtitle: "Competencias técnicas",
       title: "Habilidades ",
-      titleHighlight: "técnicas",
-      categories: {
+  titleHighlight: "técnicas",
+  descriptionLabel: "Descripción",
+  categories: {
         dev: "Desarrollo de Software y Código",
         cloud: "Automatización Cloud y Lógica de Backend",
         infra: "Infraestructura Cloud y Operaciones",
@@ -144,8 +150,10 @@ const translations: Record<Locale, Translations> = {
     },
     // Para ES (repite lo mismo para EN e IT)
     projects: {
-      subtitle: "Casos de éxito",
-      title: "Proyectos",
+  subtitle: "Proyectos seleccionados",
+  title: "Proyectos",
+  previousProject: "Proyecto anterior",
+  nextProject: "Proyecto siguiente",
       titleHighlight: "destacados",
       tech: {
         sharepoint: "SharePoint",
@@ -182,7 +190,7 @@ const translations: Record<Locale, Translations> = {
       from: "Where I come from",
       know: "What I know",
       build: "What I build",
-      next: "What's next",
+      next: "Let's talk",
     },
     nav: {
       about: "About",
@@ -193,6 +201,7 @@ const translations: Record<Locale, Translations> = {
     },
     hero: {
       greeting: "Hi, I'm",
+      statementLabel: "A professional statement",
       title: "I'm a ",
       titleHighlight: "Software Developer - Building software and automation solutions within the Microsoft ecosystem",
       titleEnd: ". Specialized in Microsoft 365 and Azure, I help companies optimize their processes through automation solutions.",
@@ -219,8 +228,9 @@ const translations: Record<Locale, Translations> = {
     skills: {
       subtitle: "Technical skills",
       title: "Technical ",
-      titleHighlight: "skills",
-      categories: {
+  titleHighlight: "skills",
+  descriptionLabel: "Description",
+  categories: {
         dev: "Software Development & Code",
         cloud: "Cloud Automation & Backend Logic",
         infra: "Cloud Infrastructure & Operations",
@@ -229,8 +239,10 @@ const translations: Record<Locale, Translations> = {
     },
     // Para EN (repite lo mismo para ES e IT)
     projects: {
-      subtitle: "Case studies",
-      title: "Selected",
+  subtitle: "Selected projects",
+  title: "Selected",
+  previousProject: "Previous project",
+  nextProject: "Next project",
       titleHighlight: "projects",
       tech: {
         sharepoint: "SharePoint",
@@ -267,7 +279,7 @@ const translations: Record<Locale, Translations> = {
       from: "Da dove vengo",
       know: "Cosa so",
       build: "Cosa costruisco",
-      next: "Cosa succede dopo",
+      next: "Parliamone",
     },
     nav: {
       about: "Chi sono",
@@ -278,6 +290,7 @@ const translations: Record<Locale, Translations> = {
     },
     hero: {
       greeting: "Ciao, sono",
+      statementLabel: "Una dichiarazione professionale",
       title: "Sono una ",
       titleHighlight: "Sviluppatrice software - Costruendo soluzioni software e di automazione nell'ecosistema Microsoft",
       titleEnd: ". Specializzata in Microsoft 365 e Azure, aiuto le aziende a ottimizzare i loro processi attraverso soluzioni di automazione.",
@@ -303,9 +316,10 @@ const translations: Record<Locale, Translations> = {
     },
     skills: {
       subtitle: "Competenze tecniche",
-      title: "Competenze ",
-      titleHighlight: "tecniche",
-      categories: {
+  title: "Competenze ",
+  titleHighlight: "tecniche",
+  descriptionLabel: "Descrizione",
+  categories: {
         dev: "Sviluppo Software & Code",
         cloud: "Cloud Automation & Backend Logic",
         infra: "Cloud Infrastructure & Operations",
@@ -313,8 +327,10 @@ const translations: Record<Locale, Translations> = {
       },
     },
     projects: {
-      subtitle: "Lavori scelti",
-      title: "Progetti",
+  subtitle: "Progetti selezionati",
+  title: "Progetti",
+  previousProject: "Progetto precedente",
+  nextProject: "Progetto successivo",
       titleHighlight: "selezionati",
       tech: {
         sharepoint: "SharePoint",

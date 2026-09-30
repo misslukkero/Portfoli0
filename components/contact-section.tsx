@@ -45,7 +45,7 @@ export function ContactSection() {
           {t.contact.description}
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 gap-px border border-border bg-border md:grid-cols-2">
           {/* Columna Izquierda: Email y Phone */}
 
           <motion.div
@@ -53,7 +53,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-10"
+            className="bg-background p-6 md:p-8"
           >
             {/* Email */}
             <div>
@@ -95,7 +95,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-10"
+            className="bg-background p-6 md:p-8"
           >
             {/* Links */}
 {/* Links */}

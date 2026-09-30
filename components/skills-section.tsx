@@ -149,11 +149,13 @@ function InteractiveSkills({
   locale,
   activeSkill,
   onSkillChange,
+  descriptionLabel,
 }: {
   skills: SkillCategory["skills"]
   locale: Locale
   activeSkill: number
   onSkillChange: (index: number) => void
+  descriptionLabel: string
 }) {
   const activeDescription = skills[activeSkill]?.description[locale]
 
@@ -186,7 +188,7 @@ function InteractiveSkills({
         })}
       </div>
       <div className="min-h-32 border-l border-primary/40 pl-6 md:min-h-40 md:pl-8">
-        <span className="font-mono text-xs tracking-[0.2em] text-primary">DESCRIPTION</span>
+        <span className="font-mono text-xs tracking-[0.2em] text-primary">{descriptionLabel}</span>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">{activeDescription}</p>
       </div>
     </div>
@@ -245,6 +247,7 @@ export function SkillsSection() {
                 onSkillChange={(index) =>
                   setActiveSkills((current) => ({ ...current, [category.id]: index }))
                 }
+                descriptionLabel={t.skills.descriptionLabel}
               />
             </motion.div>
           ))}

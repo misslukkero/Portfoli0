@@ -153,7 +153,7 @@ export function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative grid gap-8 border-t border-border py-14 md:grid-cols-[220px_1fr] md:gap-12"
+              className={`group relative grid gap-8 border-t border-border py-10 md:grid-cols-2 md:gap-16 md:py-12 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}
             >
               {/* Left column - Date & Location */}
               <div className="space-y-2">

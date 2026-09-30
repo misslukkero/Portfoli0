@@ -44,9 +44,9 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-        <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted-foreground mb-4">
-          {t.hero.greeting} 
-        </p>
+  <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary mb-4">
+  {t.hero.statementLabel}
+  </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight tracking-tight text-foreground">
         Daiana Senese
         </h1>
