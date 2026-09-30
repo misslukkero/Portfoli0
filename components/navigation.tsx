@@ -26,38 +26,22 @@ const progressItems = [
 ] as const
 
 function ProgressNavigation({ activeSection, onNavigate }: { activeSection: string; onNavigate: (id: string) => void }) {
-  return (
-    <aside aria-label="Page progress" className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 md:block">
-      <div className="relative flex flex-col gap-5 border-l border-border/70 py-1 pl-4">
-        {progressItems.map((item) => {
-          const isActive = activeSection === item.id
+  const activeItem = progressItems.find((item) => item.id === activeSection) ?? progressItems[0]
 
-          return (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => onNavigate(item.id)}
-              aria-current={isActive ? "location" : undefined}
-              aria-label={`Go to ${item.label.toLowerCase()}`}
-              className="group relative flex items-center gap-3 text-left font-mono text-[10px] tracking-[0.16em]"
-            >
-              <span
-                aria-hidden="true"
-                className={`absolute -left-[21px] size-2 rounded-full border transition-all duration-300 ${
-                  isActive ? "border-primary bg-primary" : "border-muted-foreground/60 bg-background group-hover:border-foreground"
-                }`}
-              />
-              <span className={`transition-colors ${isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"}`}>
-                {item.number}
-              </span>
-              <span className={`whitespace-nowrap transition-all duration-300 ${isActive ? "translate-x-0 text-foreground opacity-100" : "-translate-x-1 text-muted-foreground/60 opacity-70 group-hover:translate-x-0 group-hover:text-foreground group-hover:opacity-100"}`}>
-                <span aria-hidden="true" className="mr-2 text-border">—</span>
-                {item.label}
-              </span>
-            </button>
-          )
-        })}
-      </div>
+  return (
+    <aside aria-label="Page progress" className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:right-8">
+      <button
+        type="button"
+        onClick={() => onNavigate(activeItem.id)}
+        aria-current="location"
+        aria-label={`Current chapter: ${activeItem.label.toLowerCase()}`}
+        className="group flex items-center gap-3 rounded-full border border-border/70 bg-background/90 px-3 py-2 font-mono text-[10px] tracking-[0.16em] shadow-sm backdrop-blur-sm transition-colors hover:border-primary"
+      >
+        <span aria-hidden="true" className="size-1.5 rounded-full bg-primary" />
+        <span className="text-primary">{activeItem.number}</span>
+        <span className="h-px w-5 bg-border transition-colors group-hover:bg-primary/60" />
+        <span className="whitespace-nowrap text-foreground">{activeItem.label}</span>
+      </button>
     </aside>
   )
 }

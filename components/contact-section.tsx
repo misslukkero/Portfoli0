@@ -17,7 +17,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-foreground px-6 py-32 text-background md:px-12 lg:px-24">
+    <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-background px-6 py-32 text-foreground md:px-12 lg:px-24">
       <div className="w-full max-w-6xl">
         <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary">
           <span>05</span><span className="h-px w-10 bg-primary/60" /><span>What's Next</span>
@@ -60,7 +60,7 @@ export function ContactSection() {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Email</p>
               <button onClick={copyEmail}
                 className="group flex items-center gap-2 border-b border-transparent group-hover:border-primary pb-1 transition-colors">
-                <span className="text-background">{email}</span>
+                <span className="text-foreground">{email}</span>
                 <motion.span
                   animate={{ opacity: copied ? 0 : 1 }}
                   className="text-muted-foreground group-hover:text-primary"
@@ -85,7 +85,7 @@ export function ContactSection() {
             {/* Phone */}
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Phone</p>
-              <p className="text-background">{phone}</p>
+              <p className="text-foreground">{phone}</p>
             </div>
 
           </motion.div>
@@ -138,7 +138,7 @@ export function ContactSection() {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 {t.contact.location}
               </p>
-              <p className="text-background">Pesaro, Marche, Italia</p>
+              <p className="text-foreground">Pesaro, Marche, Italia</p>
               <p className="text-muted-foreground text-sm mt-1">{t.contact.availability}</p>
             </div>
           </motion.div>
