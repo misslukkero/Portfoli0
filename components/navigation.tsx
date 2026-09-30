@@ -18,15 +18,16 @@ const navItems: NavItem[] = [
 ]
 
 const progressItems = [
-  { id: "about", number: "01", label: "WHO I AM" },
-  { id: "work", number: "02", label: "WHERE I COME FROM" },
-  { id: "skills", number: "03", label: "WHAT I KNOW" },
-  { id: "projects", number: "04", label: "WHAT I BUILD" },
-  { id: "contact", number: "05", label: "WHAT'S NEXT" },
+  { id: "about", number: "01", key: "who" },
+  { id: "work", number: "02", key: "from" },
+  { id: "skills", number: "03", key: "know" },
+  { id: "projects", number: "04", key: "build" },
+  { id: "contact", number: "05", key: "next" },
 ] as const
 
-function ProgressNavigation({ activeSection, onNavigate }: { activeSection: string; onNavigate: (id: string) => void }) {
+function ProgressNavigation({ activeSection, onNavigate, labels }: { activeSection: string; onNavigate: (id: string) => void; labels: Record<(typeof progressItems)[number]["key"], string> }) {
   const activeItem = progressItems.find((item) => item.id === activeSection) ?? progressItems[0]
+  const activeLabel = labels[activeItem.key]
 
   return (
     <aside aria-label="Page progress" className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:right-8">
@@ -34,13 +35,13 @@ function ProgressNavigation({ activeSection, onNavigate }: { activeSection: stri
         type="button"
         onClick={() => onNavigate(activeItem.id)}
         aria-current="location"
-        aria-label={`Current chapter: ${activeItem.label.toLowerCase()}`}
+        aria-label={`Current chapter: ${activeLabel.toLowerCase()}`}
         className="group flex items-center gap-3 rounded-full border border-border/70 bg-background/90 px-3 py-2 font-mono text-[10px] tracking-[0.16em] shadow-sm backdrop-blur-sm transition-colors hover:border-primary"
       >
         <span aria-hidden="true" className="size-1.5 rounded-full bg-primary" />
         <span className="text-primary">{activeItem.number}</span>
         <span className="h-px w-5 bg-border transition-colors group-hover:bg-primary/60" />
-        <span className="whitespace-nowrap text-foreground">{activeItem.label}</span>
+        <span className="whitespace-nowrap text-foreground">{activeLabel}</span>
       </button>
     </aside>
   )
@@ -90,7 +91,7 @@ export function Navigation() {
 
   return (
     <>
-      <ProgressNavigation activeSection={activeSection} onNavigate={scrollTo} />
+      <ProgressNavigation activeSection={activeSection} onNavigate={scrollTo} labels={t.chapters} />
       <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

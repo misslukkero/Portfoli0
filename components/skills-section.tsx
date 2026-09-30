@@ -212,7 +212,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="relative min-h-screen border-t border-border/60 bg-card/50 px-6 py-32 md:px-12 lg:px-24">
 <div className="max-w-6xl">
-  <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary"><span>03</span><span className="h-px w-10 bg-primary/60" /><span>What I Know</span></div>
+  <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary"><span>03</span><span className="h-px w-10 bg-primary/60" /><span>{t.chapters.know}</span></div>
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

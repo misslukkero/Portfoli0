@@ -5,6 +5,13 @@ import { createContext, useContext, useState, useEffect, ReactNode } from "react
 export type Locale = "es" | "en" | "it"
 
 export interface Translations {
+  chapters: {
+    who: string
+    from: string
+    know: string
+    build: string
+    next: string
+  }
   nav: {
     about: string
     experience: string
@@ -85,6 +92,13 @@ export interface Translations {
 
 const translations: Record<Locale, Translations> = {
   es: {
+    chapters: {
+      who: "Quién soy",
+      from: "De dónde vengo",
+      know: "Lo que sé",
+      build: "Lo que construyo",
+      next: "Qué sigue",
+    },
     nav: {
       about: "Sobre mí",
       experience: "Experiencia",
@@ -95,7 +109,7 @@ const translations: Record<Locale, Translations> = {
     hero: {
       greeting: "Hola, soy",
       title: "Soy ",
-      titleHighlight: "Software Developer - Building software and automation solutions within the Microsoft ecosystem",
+      titleHighlight: "Desarrolladora de software - Construyendo soluciones de software y automatización dentro del ecosistema Microsoft",
       titleEnd: ". Especializada en Microsoft 365 y Azure, ayudo a las empresas a optimizar sus procesos mediante soluciones de automatización.",
       description: "Soy una Especialista en Cloud & Automation convencida de que la excelencia técnica se construye sobre la base de la precisión. Con más de 2 años de experiencia en el ecosistema Microsoft (M365, Azure, Power Platform) y una trayectoria previa de 9 años en el sector salud, aporto al mundo IT una mentalidad única de 'error cero'. Mi especialidad es transformar cuellos de botella manuales en flujos de trabajo en la nube automatizados y escalables. Aunque mi experiencia principal se centra en SharePoint y Power Platform, mi pasión por construir soluciones robustas me ha llevado a ampliar mis horizontes. Tras completar una formación como Full Stack Junior (Next.js y TypeScript), ahora estoy profundamente enfocada en dominar C# y .NET para unir la automatización cloud con el desarrollo de software profesional.",
       viewWork: "Ver experiencia",
@@ -163,6 +177,13 @@ const translations: Record<Locale, Translations> = {
     },
   },
   en: {
+    chapters: {
+      who: "Who I am",
+      from: "Where I come from",
+      know: "What I know",
+      build: "What I build",
+      next: "What's next",
+    },
     nav: {
       about: "About",
       experience: "Experience",
@@ -241,6 +262,13 @@ const translations: Record<Locale, Translations> = {
     },
   },
   it: {
+    chapters: {
+      who: "Chi sono",
+      from: "Da dove vengo",
+      know: "Cosa so",
+      build: "Cosa costruisco",
+      next: "Cosa succede dopo",
+    },
     nav: {
       about: "Chi sono",
       experience: "Esperienza",
@@ -251,7 +279,7 @@ const translations: Record<Locale, Translations> = {
     hero: {
       greeting: "Ciao, sono",
       title: "Sono una ",
-      titleHighlight: "Software Developer - Building software and automation solutions within the Microsoft ecosystem",
+      titleHighlight: "Sviluppatrice software - Costruendo soluzioni software e di automazione nell'ecosistema Microsoft",
       titleEnd: ". Specializzata in Microsoft 365 e Azure, aiuto le aziende a ottimizzare i loro processi attraverso soluzioni di automazione.",
       description: "Sono una Specialista Cloud & Automation convinta che l'eccellenza tecnica si costruisca sulla base della precisione. Con oltre 2 anni di esperienza nell'ecosistema Microsoft (M365, Azure, Power Platform) e un percorso precedente di 9 anni nel settore sanitario, porto nel mondo IT una mentalità unica orientata allo 'zero errori'. La mia specialità è trasformare i colli di bottiglia manuali in flussi di lavoro cloud automatizzati e scalabili. Sebbene la mia esperienza principale si concentri su SharePoint e Power Platform, la mia passione per la creazione di soluzioni robuste mi ha spinta ad ampliare i miei orizzonti. Dopo aver completato una formazione come Full Stack Junior (Next.js e TypeScript), ora sono profondamente focalizzata sul padroneggiare C# e .NET per unire l'automazione cloud allo sviluppo software professionale.",
       viewWork: "Vedi esperienza",

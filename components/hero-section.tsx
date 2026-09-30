@@ -13,7 +13,7 @@ export function HeroSection() {
         <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary">
           <span>01</span>
           <span className="h-px w-10 bg-primary/60" />
-          <span>Who I Am</span>
+          <span>{t.chapters.who}</span>
         </div>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         
