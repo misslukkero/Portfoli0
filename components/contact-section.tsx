@@ -19,9 +19,6 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-background px-6 py-32 text-foreground md:px-12 lg:px-24">
       <div className="w-full max-w-6xl">
-        <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary">
-          <span>05</span><span className="h-px w-10 bg-primary/60" /><span>{t.chapters.next}</span>
-        </div>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -45,7 +42,7 @@ export function ContactSection() {
           {t.contact.description}
         </motion.p>
 
-        <div className="grid grid-cols-1 gap-px border border-border bg-border md:grid-cols-2">
+        <div className="grid grid-cols-1 items-stretch gap-px border border-border bg-border md:grid-cols-[1.15fr_0.85fr]">
           {/* Columna Izquierda: Email y Phone */}
 
           <motion.div
@@ -53,7 +50,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-background p-6 md:p-8"
+            className="flex flex-col justify-between gap-10 bg-background p-6 md:p-8"
           >
             {/* Email */}
             <div>
@@ -95,7 +92,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-background p-6 md:p-8"
+            className="flex flex-col justify-between gap-10 bg-background p-6 md:p-8"
           >
             {/* Links */}
 {/* Links */}

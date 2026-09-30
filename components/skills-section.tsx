@@ -189,7 +189,7 @@ function InteractiveSkills({
       </div>
       <div className="min-h-32 border-l border-primary/40 pl-6 md:min-h-40 md:pl-8">
         <span className="font-mono text-xs tracking-[0.2em] text-primary">{descriptionLabel}</span>
-        <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">{activeDescription}</p>
+        <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{activeDescription}</p>
       </div>
     </div>
   )
@@ -214,7 +214,6 @@ export function SkillsSection() {
   return (
     <section id="skills" className="relative min-h-screen border-t border-border/60 bg-card/50 px-6 py-32 md:px-12 lg:px-24">
 <div className="max-w-6xl">
-  <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary"><span>03</span><span className="h-px w-10 bg-primary/60" /><span>{t.chapters.know}</span></div>
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -228,7 +227,7 @@ export function SkillsSection() {
           </h2>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="space-y-10">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.id}
@@ -259,12 +258,12 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          id="education" className="mt-32 border-t border-border pt-16"
+          id="education" className="mt-16 border-t border-border pt-10"
         >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
             {locale === "es" ? "Formación" : locale === "en" ? "Education" : "Formazione"}
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-x-10 gap-y-1 md:grid-cols-2">
             {certifications.map((cert, index) => (
               <motion.div
                 key={cert.name}

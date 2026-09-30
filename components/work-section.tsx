@@ -133,7 +133,6 @@ export function WorkSection() {
   return (
     <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 py-32 md:px-12 lg:px-24">
 <div className="max-w-6xl">
-  <div className="mb-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-primary"><span>02</span><span className="h-px w-10 bg-primary/60" /><span>{t.chapters.from}</span></div>
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
