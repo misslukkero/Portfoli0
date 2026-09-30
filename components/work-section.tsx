@@ -131,7 +131,7 @@ export function WorkSection() {
   const [expandedExperience, setExpandedExperience] = useState<string | null>(null)
 
   return (
-    <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 py-32 md:px-12 lg:px-24">
+    <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[44px] pt-0 md:px-12 lg:px-24">
 <div className="max-w-6xl">
   <motion.div
           initial={{ opacity: 0 }}

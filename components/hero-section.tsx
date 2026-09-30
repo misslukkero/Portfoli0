@@ -8,7 +8,7 @@ export function HeroSection() {
   const { t } = useI18n()
 
   return (
-    <section id="about" className="relative min-h-[92svh] overflow-hidden px-6 pb-24 pt-32 md:px-12 lg:px-24">
+    <section id="about" className="relative min-h-[92svh] overflow-hidden px-6 pb-[53px] pt-[86px] md:px-12 lg:px-24">
       <div className="w-full max-w-6xl mx-auto">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
         

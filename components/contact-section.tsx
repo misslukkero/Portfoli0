@@ -17,7 +17,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-background px-6 py-32 text-foreground md:px-12 lg:px-24">
+    <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-background px-6 pb-[27px] pt-[13px] text-foreground md:px-12 lg:px-24">
       <div className="w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
@@ -57,7 +57,7 @@ export function ContactSection() {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Email</p>
               <button onClick={copyEmail}
                 className="group flex items-center gap-2 border-b border-transparent group-hover:border-primary pb-1 transition-colors">
-                <span className="text-xl text-foreground md:text-2xl">{email}</span>
+                <span className="text-base text-foreground">{email}</span>
                 <motion.span
                   animate={{ opacity: copied ? 0 : 1 }}
                   className="text-muted-foreground group-hover:text-primary"

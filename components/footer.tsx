@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="py-12 px-6 md:px-12 lg:px-24 border-t border-border">
+    <footer className="border-t border-border px-6 pb-[25px] pt-[65px] md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <motion.div
           initial={{ opacity: 0 }}

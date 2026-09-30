@@ -69,7 +69,7 @@ export function Projects() {
   }
 
   return (
-    <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 py-32 md:px-12 lg:px-24">
+    <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[29px] pt-[26px] md:px-12 lg:px-24">
 <div className="max-w-6xl mx-auto">
   
   {/* Título de sección */}
@@ -80,9 +80,6 @@ export function Projects() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">
-            {t.projects.subtitle}
-          </span>
           <h2 className="text-4xl md:text-5xl font-serif italic mt-4 text-foreground">
             {t.projects.title}{" "}
             <span className="not-italic text-primary">{t.projects.titleHighlight}</span>
