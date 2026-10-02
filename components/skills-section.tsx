@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState } from "react"
 import { useI18n, type Locale } from "@/lib/i18n"
 
 interface SkillCategory {
@@ -143,6 +144,48 @@ const skillCategories: SkillCategory[] = [
   },
 ]
 
+function InteractiveSkills({
+  skills,
+  locale,
+  activeSkill,
+  onSkillChange,
+  descriptionLabel,
+  categoryLabel,
+}: {
+  skills: SkillCategory["skills"]
+  locale: Locale
+  activeSkill: number
+  onSkillChange: (index: number) => void
+  descriptionLabel: string
+  categoryLabel: string
+}) {
+  const activeDescription = skills[activeSkill]?.description[locale]
+
+  return (
+    <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr] md:items-start">
+      <div className="grid gap-3 sm:grid-cols-2">
+        {skillCategories.map((category, categoryIndex) => {
+          const isActive = activeSkill === categoryIndex
+          return (
+            <button key={category.id} type="button" onClick={() => onSkillChange(categoryIndex)} onMouseEnter={() => onSkillChange(categoryIndex)} aria-pressed={isActive} className={`group min-h-36 border p-5 text-left transition-all ${isActive ? "border-primary bg-primary/10 text-foreground" : "border-border bg-background/40 text-muted-foreground hover:-translate-y-0.5 hover:border-primary/60 hover:text-foreground"}`}>
+              <span className="mb-5 flex items-center justify-between font-mono text-[10px] tracking-[0.16em] text-primary"><span>{String(categoryIndex + 1).padStart(2, "0")}</span><span className="size-2 rounded-full bg-primary/60 transition-transform group-hover:scale-150" /></span>
+              <span className="block text-base font-medium">{categoryLabel}</span>
+              <span className="mt-2 block text-xs text-muted-foreground">{category.skills.length} skills</span>
+            </button>
+          )
+        })}
+      </div>
+      <div className="border-l border-primary/40 pl-6 md:pl-8">
+        <span className="font-mono text-xs tracking-[0.2em] text-primary">{descriptionLabel}</span>
+        <div className="mt-5 space-y-3">
+          {skills.map((skill) => <p key={skill.name} className="border-b border-border pb-3 text-sm text-muted-foreground">{skill.name}</p>)}
+        </div>
+        <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{activeDescription}</p>
+      </div>
+    </div>
+  )
+}
+
 const certifications = [
   { name: "Developer (364h)", institution: "ISPC, Argentina", year: "2023" },
   { name: "Full Stack Junior Developer (300h)", institution: "ISPC, Argentina", year: "2023" },
@@ -152,11 +195,18 @@ const certifications = [
 
 export function SkillsSection() {
   const { locale, t } = useI18n()
+  const [expandedEducation, setExpandedEducation] = useState<number | null>(null)
+  const [activeSkills, setActiveSkills] = useState<Record<string, number>>({
+    dev: 0,
+    cloud: 0,
+    infra: 0,
+    profskills: 0,
+  })
 
   return (
-    <section id="skills" className="py-32 px-6 md:px-12 lg:px-24 bg-card/50" >
-      <div className="max-w-6xl">
-        <motion.div
+    <section id="skills" className="relative min-h-screen border-t border-border/60 bg-card/50 px-6 pb-[26px] pt-0 md:px-12 lg:px-24">
+<div className="max-w-6xl">
+  <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -169,7 +219,7 @@ export function SkillsSection() {
           </h2>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="space-y-10">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.id}
@@ -181,25 +231,16 @@ export function SkillsSection() {
               <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
                 {t.skills.categories[category.titleKey]}
               </h3>
-              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
-                    className="group py-4 border-b border-border"
-                  >
-                    <h4 className="text-foreground font-medium mb-2 group-hover:text-primary transition-colors">
-                      {skill.name}
-                    </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {skill.description[locale]}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
+              <InteractiveSkills
+                skills={category.skills}
+                locale={locale}
+                activeSkill={activeSkills[category.id] ?? 0}
+                onSkillChange={(index) =>
+                  setActiveSkills((current) => ({ ...current, [category.id]: index }))
+                }
+descriptionLabel={t.skills.descriptionLabel}
+  categoryLabel={t.skills.categories[category.titleKey]}
+  />
             </motion.div>
           ))}
         </div>
@@ -210,28 +251,26 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-24 pt-16 border-t border-border"
+          id="education" className="mt-0 border-t border-border pt-[25px]"
         >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
             {locale === "es" ? "Formación" : locale === "en" ? "Education" : "Formazione"}
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.name}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-start justify-between gap-4 py-4 border-b border-border"
-              >
-                <div>
-                  <p className="text-foreground">{cert.name}</p>
-                  <p className="text-muted-foreground text-sm">{cert.institution}</p>
+          <div className="flex flex-col border-y border-border">
+            {certifications.map((cert, index) => {
+              const isExpanded = expandedEducation === index
+              return (
+                <div key={cert.name} className="border-b border-border last:border-b-0">
+                  <button type="button" aria-expanded={isExpanded} onClick={() => setExpandedEducation(isExpanded ? null : index)} className="flex w-full items-center justify-between gap-4 py-4 text-left">
+                    <span className="flex items-baseline gap-4"><span className="font-mono text-xs text-primary">{cert.year}</span><span className="text-foreground">{cert.name}</span></span>
+                    <span aria-hidden="true" className="font-mono text-primary">{isExpanded ? "−" : "+"}</span>
+                  </button>
+                  <div className={`grid transition-[grid-template-rows] duration-300 ${isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                    <p className="overflow-hidden pb-0 text-sm text-muted-foreground"><span className="block pb-4 pl-14">{cert.institution}</span></p>
+                  </div>
                 </div>
-                <span className="font-mono text-sm text-primary shrink-0">{cert.year}</span>
-              </motion.div>
-            ))}
+              )
+            })}
           </div>
         </motion.div>
       </div>

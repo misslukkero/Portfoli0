@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
+import { useState } from "react"
 import { useI18n, type Locale, type Translations } from "@/lib/i18n"
 
 // 1. Interfaz del Proyecto
@@ -60,12 +61,18 @@ const projects: Project[] = [
 
 export function Projects() {
   const { locale, t } = useI18n()
+  const [activeProject, setActiveProject] = useState(0)
+  const project = projects[activeProject]
+
+  const moveProject = (direction: number) => {
+    setActiveProject((current) => (current + direction + projects.length) % projects.length)
+  }
 
   return (
-    <section id="projects" className="py-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Título de sección */}
+    <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[29px] pt-[26px] md:px-12 lg:px-24">
+<div className="max-w-6xl mx-auto">
+  
+  {/* Título de sección */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,9 +80,6 @@ export function Projects() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase">
-            {t.projects.subtitle}
-          </span>
           <h2 className="text-4xl md:text-5xl font-serif italic mt-4 text-foreground">
             {t.projects.title}{" "}
             <span className="not-italic text-primary">{t.projects.titleHighlight}</span>
@@ -83,55 +87,39 @@ export function Projects() {
           </h2>
         </motion.div>
 
-        {/* Lista de Proyectos */}
-        <div className="grid grid-cols-1 gap-24">
-          {projects.map((project) => (
+        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="min-w-0 overflow-hidden border-y border-border py-12">
             <motion.article
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group border-b border-border pb-16"
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.35 }}
+              className="max-w-4xl"
             >
-              <div className="max-w-4xl">
-                <div className="space-y-6">
-                  {/* Título del proyecto */}
-                  <h3 className="text-3xl md:text-4xl font-serif italic text-foreground transition-colors">
-                    {project.link && project.link.trim() !== "" ? (
-                <a href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group-hover:text-primary transition-colors"
-                 >
-                {project.name[locale]} ↗
-                </a>
-                ) : (
-                <span className="text-foreground">
-                {project.name[locale]}
-                </span>
-                )}
-                  </h3>
-                  
-                  {/* Descripción */}
-                  <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                    {project.description[locale]}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 pt-4">
-                    {project.tags.map((tagKey) => (
-                      <span
-                        key={tagKey}
-                        className="text-[10px] font-mono uppercase tracking-wider px-3 py-1 bg-secondary text-secondary-foreground border border-border"
-                      >
-                        {t.projects.tech[tagKey as keyof typeof t.projects.tech]}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <p className="mb-5 font-mono text-xs tracking-[0.24em] text-primary">
+                {String(activeProject + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+              </p>
+              <h3 className="text-3xl font-serif italic text-foreground md:text-5xl">
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
+                    {project.name[locale]} ↗
+                  </a>
+                ) : project.name[locale]}
+              </h3>
+              <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">{project.description[locale]}</p>
+              <div className="mt-10 flex flex-wrap gap-2">
+                {project.tags.map((tagKey) => (
+                  <span key={tagKey} className="border border-border bg-secondary px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-secondary-foreground">
+                    {t.projects.tech[tagKey as keyof typeof t.projects.tech]}
+                  </span>
+                ))}
               </div>
             </motion.article>
-          ))}
+          </div>
+          <div className="flex items-center gap-3 lg:pb-3">
+            <button type="button" onClick={() => moveProject(-1)} aria-label={t.projects.previousProject} className="border border-border px-4 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary">←</button>
+            <button type="button" onClick={() => moveProject(1)} aria-label={t.projects.nextProject} className="border border-border px-4 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary">→</button>
+          </div>
         </div>
       </div>
     </section>

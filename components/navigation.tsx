@@ -10,12 +10,38 @@ interface NavItem {
   }
 
 const navItems: NavItem[] = [
-  { id: "about", labelKey: "about"},
-  { id: "work", labelKey: "experience"},
-  { id: "skills", labelKey: "skills"},
-  { id: "projects", labelKey: "projects"},
-  { id: "contact", labelKey: "contact"},
+  { id: "about", labelKey: "about" },
+  { id: "work", labelKey: "experience" },
+  { id: "skills", labelKey: "skills" },
+  { id: "projects", labelKey: "projects" },
+  { id: "contact", labelKey: "contact" },
 ]
+
+const progressItems = [
+  { id: "about", number: "01", key: "who" },
+  { id: "work", number: "02", key: "from" },
+  { id: "skills", number: "03", key: "know" },
+  { id: "projects", number: "04", key: "build" },
+  { id: "contact", number: "05", key: "next" },
+] as const
+
+function ProgressNavigation({ activeSection, onNavigate, labels }: { activeSection: string; onNavigate: (id: string) => void; labels: Record<(typeof progressItems)[number]["key"], string> }) {
+  return (
+    <aside aria-label="Page progress" className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 md:block lg:right-8">
+      <nav aria-label="Navigate chapters" className="flex flex-col items-center gap-4 rounded-full border border-border/70 bg-background/90 px-2 py-3 shadow-sm backdrop-blur-sm">
+        {progressItems.map((item) => {
+          const isActive = item.id === activeSection
+          return (
+            <button key={item.id} type="button" onClick={() => onNavigate(item.id)} aria-label={`${item.number} ${labels[item.key]}`} aria-current={isActive ? "location" : undefined} className="group relative flex size-5 items-center justify-center">
+              <span className={`size-2 rounded-full border transition-all ${isActive ? "border-primary bg-primary ring-4 ring-primary/15" : "border-muted-foreground/60 bg-background group-hover:border-primary group-hover:bg-primary/30"}`} />
+              <span role="tooltip" className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md border border-border bg-background px-3 py-2 font-mono text-[10px] tracking-[0.14em] text-foreground opacity-0 shadow-md transition-opacity group-hover:opacity-100">{item.number} · {labels[item.key]}</span>
+            </button>
+          )
+        })}
+      </nav>
+    </aside>
+  )
+}
 
 export function Navigation() {
   const { locale, setLocale, t } = useI18n()
@@ -27,7 +53,7 @@ export function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      const sections = navItems.map((item) => {
+      const sections = progressItems.map((item) => {
         const element = document.getElementById(item.id)
         if (element) {
           const rect = element.getBoundingClientRect()
@@ -60,7 +86,9 @@ export function Navigation() {
   }
 
   return (
-    <motion.header
+    <>
+      <ProgressNavigation activeSection={activeSection} onNavigate={scrollTo} labels={t.chapters} />
+      <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5 }}
@@ -146,6 +174,7 @@ export function Navigation() {
           </div>
         </div>
       </nav>
-    </motion.header>
+      </motion.header>
+    </>
   )
 }

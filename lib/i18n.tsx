@@ -5,6 +5,13 @@ import { createContext, useContext, useState, useEffect, ReactNode } from "react
 export type Locale = "es" | "en" | "it"
 
 export interface Translations {
+  chapters: {
+    who: string
+    from: string
+    know: string
+    build: string
+    next: string
+  }
   nav: {
     about: string
     experience: string
@@ -13,8 +20,9 @@ export interface Translations {
     contact: string
   }
   hero: {
-    greeting: string
-    title: string
+  greeting: string
+  statementLabel: string
+  title: string
     titleHighlight: string
     titleEnd: string
     description: string
@@ -40,9 +48,10 @@ export interface Translations {
   skills: {
     subtitle: string
     title: string
-    titleHighlight: string
-    categories: {
-      dev: string
+  titleHighlight: string
+  descriptionLabel: string
+  categories: {
+  dev: string
       cloud: string
       infra: string
       profskills: string
@@ -52,6 +61,8 @@ export interface Translations {
     subtitle: string
     title: string
     titleHighlight: string
+    previousProject: string
+    nextProject: string
     // Definicion de las llaves de las tecnologías como tags
     tech: {
       sharepoint: string
@@ -85,6 +96,13 @@ export interface Translations {
 
 const translations: Record<Locale, Translations> = {
   es: {
+    chapters: {
+      who: "Quién soy",
+      from: "De dónde vengo",
+      know: "Lo que sé",
+      build: "Lo que construyo",
+      next: "Hablemos",
+    },
     nav: {
       about: "Sobre mí",
       experience: "Experiencia",
@@ -94,10 +112,11 @@ const translations: Record<Locale, Translations> = {
     },
     hero: {
       greeting: "Hola, soy",
+      statementLabel: "Una declaración profesional",
       title: "Soy ",
-      titleHighlight: "Cloud & Automation Consultant",
+      titleHighlight: "Desarrolladora de software - Construyendo soluciones de software y automatización dentro del ecosistema Microsoft",
       titleEnd: ". Especializada en Microsoft 365 y Azure, ayudo a las empresas a optimizar sus procesos mediante soluciones de automatización.",
-      description: "Soy una Especialista en Cloud & Automation convencida de que la excelencia técnica se construye sobre la base de la precisión. Con más de 2 años de experiencia en el ecosistema Microsoft (M365, Azure, Power Platform) y una trayectoria previa de 9 años en el sector salud, aporto al mundo IT una mentalidad única de 'error cero'. Mi especialidad es transformar cuellos de botella manuales en flujos de trabajo en la nube automatizados y escalables. Aunque mi experiencia principal se centra en SharePoint y Power Platform, mi pasión por construir soluciones robustas me ha llevado a ampliar mis horizontes. Tras completar una formación como Full Stack Junior (Next.js y TypeScript), ahora estoy profundamente enfocada en dominar C# y .NET para unir la automatización cloud con el desarrollo de software profesional.",
+      description: "Tengo más de 2 años de experiencia en el ecosistema Microsoft, especialmente en M365, Azure, SharePoint y Power Platform. Después de una trayectoria profesional en el sector sanitario, entré en el mundo IT desarrollando competencias en soporte técnico, automatización y gestión de soluciones cloud. Hoy estoy orientando mi recorrido hacia el desarrollo de software, profundizando en C# y .NET y consolidando mis conocimientos en Next.js y TypeScript. Me interesa seguir creciendo en un rol que me permita unir desarrollo, cloud y automatización.",
       viewWork: "Ver experiencia",
       stats: {
         experience: "Experiencia IT",
@@ -120,8 +139,9 @@ const translations: Record<Locale, Translations> = {
     skills: {
       subtitle: "Competencias técnicas",
       title: "Habilidades ",
-      titleHighlight: "técnicas",
-      categories: {
+  titleHighlight: "técnicas",
+  descriptionLabel: "Descripción",
+  categories: {
         dev: "Desarrollo de Software y Código",
         cloud: "Automatización Cloud y Lógica de Backend",
         infra: "Infraestructura Cloud y Operaciones",
@@ -130,8 +150,10 @@ const translations: Record<Locale, Translations> = {
     },
     // Para ES (repite lo mismo para EN e IT)
     projects: {
-      subtitle: "Casos de éxito",
-      title: "Proyectos",
+  subtitle: "Proyectos seleccionados",
+  title: "Proyectos",
+  previousProject: "Proyecto anterior",
+  nextProject: "Proyecto siguiente",
       titleHighlight: "destacados",
       tech: {
         sharepoint: "SharePoint",
@@ -163,6 +185,13 @@ const translations: Record<Locale, Translations> = {
     },
   },
   en: {
+    chapters: {
+      who: "Who I am",
+      from: "Where I come from",
+      know: "What I know",
+      build: "What I build",
+      next: "Let's talk",
+    },
     nav: {
       about: "About",
       experience: "Experience",
@@ -172,10 +201,11 @@ const translations: Record<Locale, Translations> = {
     },
     hero: {
       greeting: "Hi, I'm",
+      statementLabel: "A professional statement",
       title: "I'm a ",
-      titleHighlight: "Cloud & Automation Consultant",
+      titleHighlight: "Software Developer - Building software and automation solutions within the Microsoft ecosystem",
       titleEnd: ". Specialized in Microsoft 365 and Azure, I help companies optimize their processes through automation solutions.",
-      description: "I am a Cloud & Automation Specialist who believes that technical excellence is built on precision. With over 2 years of experience in the Microsoft ecosystem (M365, Azure, Power Platform) and a previous 9-year background in the healthcare sector, I bring a unique 'zero-error' mindset to IT infrastructure. I specialize in transforming manual bottlenecks into scalable, automated cloud workflows. While my core expertise lies in SharePoint and Power Platform, my passion for building robust solutions has led me to expand my horizons. Having completed a Full Stack Junior program (Next.js & TypeScript), I am now deeply focused on mastering C# and .NET to bridge the gap between cloud automation and professional software development.",
+      description: "I have over 2 years of experience in the Microsoft ecosystem, with a particular focus on M365, Azure, SharePoint, and Power Platform. After a professional background in healthcare, I entered the IT field and developed skills in technical support, automation, and cloud solution management. I am now orienting my career toward software development, deepening my knowledge of C# and .NET while strengthening my skills in Next.js and TypeScript. I am interested in continuing to grow in a role that allows me to combine development, cloud, and automation.",
       viewWork: "View experience",
       stats: {
         experience: "IT Experience",
@@ -198,8 +228,9 @@ const translations: Record<Locale, Translations> = {
     skills: {
       subtitle: "Technical skills",
       title: "Technical ",
-      titleHighlight: "skills",
-      categories: {
+  titleHighlight: "skills",
+  descriptionLabel: "Description",
+  categories: {
         dev: "Software Development & Code",
         cloud: "Cloud Automation & Backend Logic",
         infra: "Cloud Infrastructure & Operations",
@@ -208,8 +239,10 @@ const translations: Record<Locale, Translations> = {
     },
     // Para EN (repite lo mismo para ES e IT)
     projects: {
-      subtitle: "Case studies",
-      title: "Selected",
+  subtitle: "Selected projects",
+  title: "Selected",
+  previousProject: "Previous project",
+  nextProject: "Next project",
       titleHighlight: "projects",
       tech: {
         sharepoint: "SharePoint",
@@ -241,6 +274,13 @@ const translations: Record<Locale, Translations> = {
     },
   },
   it: {
+    chapters: {
+      who: "Chi sono",
+      from: "Da dove vengo",
+      know: "Cosa so",
+      build: "Cosa costruisco",
+      next: "Parliamone",
+    },
     nav: {
       about: "Chi sono",
       experience: "Esperienza",
@@ -250,10 +290,11 @@ const translations: Record<Locale, Translations> = {
     },
     hero: {
       greeting: "Ciao, sono",
+      statementLabel: "Una dichiarazione professionale",
       title: "Sono una ",
-      titleHighlight: "Cloud & Automation Consultant",
+      titleHighlight: "Sviluppatrice software - Costruendo soluzioni software e di automazione nell'ecosistema Microsoft",
       titleEnd: ". Specializzata in Microsoft 365 e Azure, aiuto le aziende a ottimizzare i loro processi attraverso soluzioni di automazione.",
-      description: "Sono una Specialista Cloud & Automation convinta che l'eccellenza tecnica si costruisca sulla base della precisione. Con oltre 2 anni di esperienza nell'ecosistema Microsoft (M365, Azure, Power Platform) e un percorso precedente di 9 anni nel settore sanitario, porto nel mondo IT una mentalità unica orientata allo 'zero errori'. La mia specialità è trasformare i colli di bottiglia manuali in flussi di lavoro cloud automatizzati e scalabili. Sebbene la mia esperienza principale si concentri su SharePoint e Power Platform, la mia passione per la creazione di soluzioni robuste mi ha spinta ad ampliare i miei orizzonti. Dopo aver completato una formazione come Full Stack Junior (Next.js e TypeScript), ora sono profondamente focalizzata sul padroneggiare C# e .NET per unire l'automazione cloud allo sviluppo software professionale.",
+      description: "Ho oltre 2 anni di esperienza nell’ecosistema Microsoft, con esperienza in M365, Azure, SharePoint e Power Platform. Dopo un percorso professionale nel settore sanitario, sono entrata nel mondo IT sviluppando competenze nel supporto tecnico, nell’automazione e nella gestione di soluzioni cloud. Oggi sto orientando il mio percorso verso lo sviluppo software, approfondendo C# e .NET e consolidando le mie competenze in Next.js e TypeScript. Il mio obiettivo è crescere come sviluppatrice, continuando a lavorare all’intersezione tra sviluppo software, cloud e automazione.",
       viewWork: "Vedi esperienza",
       stats: {
         experience: "Esperienza IT",
@@ -275,9 +316,10 @@ const translations: Record<Locale, Translations> = {
     },
     skills: {
       subtitle: "Competenze tecniche",
-      title: "Competenze ",
-      titleHighlight: "tecniche",
-      categories: {
+  title: "Competenze ",
+  titleHighlight: "tecniche",
+  descriptionLabel: "Descrizione",
+  categories: {
         dev: "Sviluppo Software & Code",
         cloud: "Cloud Automation & Backend Logic",
         infra: "Cloud Infrastructure & Operations",
@@ -285,8 +327,10 @@ const translations: Record<Locale, Translations> = {
       },
     },
     projects: {
-      subtitle: "Lavori scelti",
-      title: "Progetti",
+  subtitle: "Progetti selezionati",
+  title: "Progetti",
+  previousProject: "Progetto precedente",
+  nextProject: "Progetto successivo",
       titleHighlight: "selezionati",
       tech: {
         sharepoint: "SharePoint",

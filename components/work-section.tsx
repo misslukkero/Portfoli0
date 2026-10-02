@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState } from "react"
 import { useI18n, type Locale } from "@/lib/i18n"
 
 interface Experience {
@@ -8,6 +9,7 @@ interface Experience {
   title: Record<Locale, string>
   company: string
   location: string
+  remoteLocation?: Record<Locale, string>
   periodStart: string
   periodEnd?: string
   description: Record<Locale, string[]>
@@ -15,6 +17,32 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+    id: "current-consultant",
+    title: {
+      es: "Consultora",
+      en: "Consultant",
+      it: "Consultant",
+    },
+    company: "Aubay Italia",
+    location: "Italia",
+    remoteLocation: {
+      es: "Italia · Trabajo remoto",
+      en: "Italy · Fully remote",
+      it: "Italia · Full remote",
+    },
+    periodStart: "Jun 2026",
+    description: {
+      es: ["Monitoring y gestión de operaciones y procesos digitales."],
+      en: ["Monitoring and management of digital operations and processes."],
+      it: ["Monitoring e gestione di operazioni e processi digitali."],
+    },
+    tags: {
+      es: ["Monitoring", "Gestión"],
+      en: ["Monitoring", "Management"],
+      it: ["Monitoring", "Gestione"],
+    },
+  },
   {
     id: "1",
     title: {
@@ -127,11 +155,12 @@ const experiences: Experience[] = [
 
 export function WorkSection() {
   const { locale, t } = useI18n()
+  const [expandedExperience, setExpandedExperience] = useState<string | null>(null)
 
   return (
-    <section id="work" className="py-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl">
-        <motion.div
+    <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[44px] pt-0 md:px-12 lg:px-24">
+<div className="max-w-6xl">
+  <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -144,52 +173,48 @@ export function WorkSection() {
           </h2>
         </motion.div>
 
-        <div className="space-y-0">
-          {experiences.map((experience, index) => (
-            <motion.article
-              key={experience.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group grid md:grid-cols-[200px_1fr] gap-8 py-12 border-t border-border"
-            >
-              {/* Left column - Date & Location */}
-              <div className="space-y-2">
-                <p className="font-mono text-sm text-primary">
-                  {experience.periodStart} — {experience.periodEnd || t.work.present}
-                </p>
-                <p className="text-sm text-muted-foreground">{experience.location}</p>
-              </div>
-              
-              {/* Right column - Content */}
-              <div>
-                <h3 className="text-xl font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {experience.title[locale]}
-                </h3>
-                <p className="text-muted-foreground mb-6">{experience.company}</p>
-                
-                <ul className="space-y-3 mb-6">
-                  {experience.description[locale].map((item, i) => (
-                    <li key={i} className="text-muted-foreground text-sm leading-relaxed pl-4 border-l border-border">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="flex flex-wrap gap-2">
-                  {experience.tags[locale].map((tag) => (
-    <span
-      key={tag}
-      className="text-xs font-mono text-muted-foreground border border-border px-3 py-1"
-    >
-     {tag}
-                    </span>
-                  ))}
+        <div className="grid gap-4 md:grid-cols-2">
+          {experiences.map((experience, index) => {
+            const isExpanded = expandedExperience === experience.id
+
+            return (
+              <motion.article
+                key={experience.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className={`group border border-border bg-background transition-colors hover:border-primary/60 ${isExpanded ? "md:col-span-2" : ""}`}
+              >
+                <button
+                  type="button"
+                  aria-expanded={isExpanded}
+                  onClick={() => setExpandedExperience(isExpanded ? null : experience.id)}
+                  className="grid w-full gap-5 p-6 text-left md:grid-cols-[1fr_auto] md:items-start md:p-8"
+                >
+                  <span>
+                    <span className="mb-3 block font-mono text-xs text-primary">{experience.periodStart} — {experience.periodEnd || t.work.present}</span>
+                    <span className="block text-xl font-medium text-foreground transition-colors group-hover:text-primary">{experience.title[locale]}</span>
+                    <span className="mt-1 block text-sm text-muted-foreground">{experience.company}</span>
+                  </span>
+                  <span aria-hidden="true" className="font-mono text-lg text-primary">{isExpanded ? "−" : "+"}</span>
+                </button>
+                <div className={`grid transition-[grid-template-rows] duration-300 ${isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                  <div className="overflow-hidden">
+                    <div className="border-t border-border px-6 pb-7 pt-6 md:px-8">
+                      <p className="mb-5 text-sm text-muted-foreground">{experience.remoteLocation?.[locale] ?? experience.location}</p>
+                      <ul className="grid gap-3 md:grid-cols-2">
+                        {experience.description[locale].map((item, i) => <li key={i} className="border-l border-primary/50 pl-4 text-sm leading-relaxed text-muted-foreground">{item}</li>)}
+                      </ul>
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {experience.tags[locale].map((tag) => <span key={tag} className="border border-border px-3 py-1 font-mono text-xs text-muted-foreground">{tag}</span>)}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            )
+          })}
         </div>
       </div>
     </section>
