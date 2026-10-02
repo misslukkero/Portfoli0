@@ -17,6 +17,27 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    id: "current-consultant",
+    title: {
+      es: "Consultora",
+      en: "Consultant",
+      it: "Consultant",
+    },
+    company: "Aubay Italia",
+    location: "Italia",
+    periodStart: "Jun 2026",
+    description: {
+      es: ["Monitoring y gestión de operaciones y procesos digitales."],
+      en: ["Monitoring and management of digital operations and processes."],
+      it: ["Monitoring e gestione di operazioni e processi digitali."],
+    },
+    tags: {
+      es: ["Monitoring", "Gestión"],
+      en: ["Monitoring", "Management"],
+      it: ["Monitoring", "Gestione"],
+    },
+  },
+  {
     id: "1",
     title: {
       es: "Especialista Soporte IT",

@@ -10,13 +10,13 @@ export function HeroSection() {
   return (
     <section id="about" className="relative min-h-[92svh] overflow-hidden px-6 pb-[53px] pt-[86px] md:px-12 lg:px-24">
       <div className="w-full max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative order-2 lg:order-1"
+            className="relative order-2 lg:order-2"
           >
             <div className="relative aspect-3/4 max-w-md mx-auto lg:mx-0">
               <Image
@@ -32,16 +32,13 @@ export function HeroSection() {
           </motion.div>
 
         
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-1">
           
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-  <p className="text-xs font-mono uppercase tracking-[0.3em] text-primary mb-4">
-  {t.hero.statementLabel}
-  </p>
         <h1 className="text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl">
           <span className="font-serif not-italic text-foreground">Daiana</span>{" "}
           <span className="font-serif italic text-primary">Senese</span>
