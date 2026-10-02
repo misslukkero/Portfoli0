@@ -294,7 +294,7 @@ const translations: Record<Locale, Translations> = {
       title: "Sono una ",
       titleHighlight: "Sviluppatrice software - Costruendo soluzioni software e di automazione nell'ecosistema Microsoft",
       titleEnd: ". Specializzata in Microsoft 365 e Azure, aiuto le aziende a ottimizzare i loro processi attraverso soluzioni di automazione.",
-      description: "Ho oltre 2 anni di esperienza nell’ecosistema Microsoft, con particolare esperienza in M365, Azure, SharePoint e Power Platform. Dopo un percorso professionale nel settore sanitario, sono entrata nel mondo IT sviluppando competenze nel supporto tecnico, nell’automazione e nella gestione di soluzioni cloud. Oggi sto orientando il mio percorso verso lo sviluppo software, approfondendo C# e .NET e consolidando le mie competenze in Next.js e TypeScript. Mi interessa continuare a crescere in un ruolo che mi permetta di unire sviluppo, cloud e automazione.",
+      description: "Ho oltre 2 anni di esperienza nell’ecosistema Microsoft, con esperienza in M365, Azure, SharePoint e Power Platform. Dopo un percorso professionale nel settore sanitario, sono entrata nel mondo IT sviluppando competenze nel supporto tecnico, nell’automazione e nella gestione di soluzioni cloud. Oggi sto orientando il mio percorso verso lo sviluppo software, approfondendo C# e .NET e consolidando le mie competenze in Next.js e TypeScript. Il mio obiettivo è crescere come sviluppatrice, continuando a lavorare all’intersezione tra sviluppo software, cloud e automazione.",
       viewWork: "Vedi esperienza",
       stats: {
         experience: "Esperienza IT",

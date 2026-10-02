@@ -150,32 +150,37 @@ function InteractiveSkills({
   activeSkill,
   onSkillChange,
   descriptionLabel,
+  categoryLabel,
 }: {
   skills: SkillCategory["skills"]
   locale: Locale
   activeSkill: number
   onSkillChange: (index: number) => void
   descriptionLabel: string
+  categoryLabel: string
 }) {
   const activeDescription = skills[activeSkill]?.description[locale]
 
   return (
-    <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-      <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {skills.map((skill, index) => {
-          const isActive = activeSkill === index
+    <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr] md:items-start">
+      <div className="grid gap-3 sm:grid-cols-2">
+        {skillCategories.map((category, categoryIndex) => {
+          const isActive = activeSkill === categoryIndex
           return (
-            <button key={skill.name} type="button" onClick={() => onSkillChange(index)} onMouseEnter={() => onSkillChange(index)} aria-pressed={isActive} className={`relative min-h-24 border px-4 py-4 text-left transition-all ${isActive ? "border-primary bg-primary/10 text-foreground shadow-[0_0_0_1px_hsl(var(--primary)/0.2)]" : "border-border bg-background/40 text-muted-foreground hover:-translate-y-0.5 hover:border-primary/60 hover:text-foreground"}`}>
-              <span className="mb-3 block font-mono text-[10px] text-primary">{String(index + 1).padStart(2, "0")}</span>
-              <span className="text-sm font-medium leading-tight">{skill.name}</span>
-              <span aria-hidden="true" className="absolute -right-1 -top-1 size-2 rounded-full bg-primary/60" />
+            <button key={category.id} type="button" onClick={() => onSkillChange(categoryIndex)} onMouseEnter={() => onSkillChange(categoryIndex)} aria-pressed={isActive} className={`group min-h-36 border p-5 text-left transition-all ${isActive ? "border-primary bg-primary/10 text-foreground" : "border-border bg-background/40 text-muted-foreground hover:-translate-y-0.5 hover:border-primary/60 hover:text-foreground"}`}>
+              <span className="mb-5 flex items-center justify-between font-mono text-[10px] tracking-[0.16em] text-primary"><span>{String(categoryIndex + 1).padStart(2, "0")}</span><span className="size-2 rounded-full bg-primary/60 transition-transform group-hover:scale-150" /></span>
+              <span className="block text-base font-medium">{categoryLabel}</span>
+              <span className="mt-2 block text-xs text-muted-foreground">{category.skills.length} skills</span>
             </button>
           )
         })}
       </div>
       <div className="border-l border-primary/40 pl-6 md:pl-8">
         <span className="font-mono text-xs tracking-[0.2em] text-primary">{descriptionLabel}</span>
-        <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{activeDescription}</p>
+        <div className="mt-5 space-y-3">
+          {skills.map((skill) => <p key={skill.name} className="border-b border-border pb-3 text-sm text-muted-foreground">{skill.name}</p>)}
+        </div>
+        <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{activeDescription}</p>
       </div>
     </div>
   )
@@ -233,8 +238,9 @@ export function SkillsSection() {
                 onSkillChange={(index) =>
                   setActiveSkills((current) => ({ ...current, [category.id]: index }))
                 }
-                descriptionLabel={t.skills.descriptionLabel}
-              />
+descriptionLabel={t.skills.descriptionLabel}
+  categoryLabel={t.skills.categories[category.titleKey]}
+  />
             </motion.div>
           ))}
         </div>
