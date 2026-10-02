@@ -18,7 +18,7 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
             className="relative order-2 lg:order-2"
           >
-            <div className="relative aspect-3/4 max-w-md mx-auto lg:mx-0">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] lg:mx-0 lg:max-w-[280px]">
               <Image
                 src="/daiana-profile.png"
                 alt="Daiana Senese"

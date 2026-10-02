@@ -160,34 +160,20 @@ function InteractiveSkills({
   const activeDescription = skills[activeSkill]?.description[locale]
 
   return (
-    <div className="grid gap-8 md:grid-cols-[1fr_1.15fr] md:items-start">
-      <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
+    <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+      <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-3">
         {skills.map((skill, index) => {
           const isActive = activeSkill === index
-
           return (
-            <button
-              key={skill.name}
-              type="button"
-              onClick={() => onSkillChange(index)}
-              onMouseEnter={() => onSkillChange(index)}
-              aria-pressed={isActive}
-              className={`group flex items-center gap-4 border-b px-0 py-4 text-left transition-colors ${
-                isActive ? "border-primary text-foreground" : "border-border text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span className={`font-mono text-xs transition-colors ${isActive ? "text-primary" : "text-muted-foreground/60"}`}>
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="text-base font-medium">{skill.name}</span>
-              <span aria-hidden="true" className={`ml-auto transition-transform ${isActive ? "translate-x-1 text-primary" : "text-muted-foreground/50 group-hover:translate-x-1"}`}>
-                →
-              </span>
+            <button key={skill.name} type="button" onClick={() => onSkillChange(index)} onMouseEnter={() => onSkillChange(index)} aria-pressed={isActive} className={`relative min-h-24 border px-4 py-4 text-left transition-all ${isActive ? "border-primary bg-primary/10 text-foreground shadow-[0_0_0_1px_hsl(var(--primary)/0.2)]" : "border-border bg-background/40 text-muted-foreground hover:-translate-y-0.5 hover:border-primary/60 hover:text-foreground"}`}>
+              <span className="mb-3 block font-mono text-[10px] text-primary">{String(index + 1).padStart(2, "0")}</span>
+              <span className="text-sm font-medium leading-tight">{skill.name}</span>
+              <span aria-hidden="true" className="absolute -right-1 -top-1 size-2 rounded-full bg-primary/60" />
             </button>
           )
         })}
       </div>
-      <div className="min-h-32 border-l border-primary/40 pl-6 md:min-h-40 md:pl-8">
+      <div className="border-l border-primary/40 pl-6 md:pl-8">
         <span className="font-mono text-xs tracking-[0.2em] text-primary">{descriptionLabel}</span>
         <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{activeDescription}</p>
       </div>

@@ -9,6 +9,7 @@ interface Experience {
   title: Record<Locale, string>
   company: string
   location: string
+  remoteLocation?: Record<Locale, string>
   periodStart: string
   periodEnd?: string
   description: Record<Locale, string[]>
@@ -25,6 +26,11 @@ const experiences: Experience[] = [
     },
     company: "Aubay Italia",
     location: "Italia",
+    remoteLocation: {
+      es: "Italia · Trabajo remoto",
+      en: "Italy · Fully remote",
+      it: "Italia · Full remote",
+    },
     periodStart: "Jun 2026",
     description: {
       es: ["Monitoring y gestión de operaciones y procesos digitales."],
@@ -196,7 +202,7 @@ export function WorkSection() {
                 <div className={`grid transition-[grid-template-rows] duration-300 ${isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                   <div className="overflow-hidden">
                     <div className="border-t border-border px-6 pb-7 pt-6 md:px-8">
-                      <p className="mb-5 text-sm text-muted-foreground">{experience.location}</p>
+                      <p className="mb-5 text-sm text-muted-foreground">{experience.remoteLocation?.[locale] ?? experience.location}</p>
                       <ul className="grid gap-3 md:grid-cols-2">
                         {experience.description[locale].map((item, i) => <li key={i} className="border-l border-primary/50 pl-4 text-sm leading-relaxed text-muted-foreground">{item}</li>)}
                       </ul>
