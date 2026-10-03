@@ -21,8 +21,8 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: 'Daiana Senese — Cloud & Automation Consultant',
-  description: 'Cloud & Automation Consultant specializzata in Microsoft 365, Azure e Power Platform. Pesaro, Italia.',
+  title: 'Daiana Senese — Software Developer | Microsoft Ecosystem',
+  description: 'Software Developer - Building software and automation solutions within the Microsoft ecosystem. Pesaro, Italia.',
   generator: 'v0.app',
   icons: {
     icon: [
