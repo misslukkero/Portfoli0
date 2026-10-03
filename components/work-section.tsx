@@ -190,7 +190,7 @@ export function WorkSection() {
                   type="button"
                   aria-expanded={isExpanded}
                   onClick={() => setExpandedExperience(isExpanded ? null : experience.id)}
-                  className="grid w-full gap-5 p-6 text-left md:grid-cols-[1fr_auto] md:items-start md:p-8"
+                  className="grid w-full gap-5 p-6 text-center md:grid-cols-[1fr_auto] md:items-start md:p-8"
                 >
                   <span>
                     <span className="mb-3 block font-mono text-xs text-primary">{experience.periodStart} — {experience.periodEnd || t.work.present}</span>

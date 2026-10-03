@@ -32,7 +32,7 @@ export function HeroSection() {
           </motion.div>
 
         
-          <div className="order-1 lg:order-1">
+          <div className="order-1 text-center lg:order-1">
           
           <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export function HeroSection() {
         
             
             <motion.div 
-              className="mt-8 flex items-start gap-4"
+              className="mt-8 flex items-center justify-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -70,7 +70,7 @@ export function HeroSection() {
 
             
             <motion.div 
-              className="mt-10 grid grid-cols-3 gap-6"
+              className="mx-auto mt-10 grid max-w-xl grid-cols-3 gap-6 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}

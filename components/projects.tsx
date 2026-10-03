@@ -94,7 +94,7 @@ export function Projects() {
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.35 }}
-              className="max-w-4xl"
+              className="mx-auto max-w-4xl text-center"
             >
               <p className="mb-5 font-mono text-xs tracking-[0.24em] text-primary">
                 {String(activeProject + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
