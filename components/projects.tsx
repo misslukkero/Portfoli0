@@ -70,7 +70,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[29px] pt-[26px] md:px-12 lg:px-24">
-<div className="max-w-6xl mx-auto">
+<div className="mx-auto max-w-5xl">
   
   {/* Título de sección */}
         <motion.div
@@ -94,7 +94,7 @@ export function Projects() {
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.35 }}
-              className="max-w-4xl"
+              className="max-w-4xl text-left"
             >
               <p className="mb-5 font-mono text-xs tracking-[0.24em] text-primary">
                 {String(activeProject + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
@@ -116,9 +116,9 @@ export function Projects() {
               </div>
             </motion.article>
           </div>
-          <div className="flex items-center gap-3 lg:pb-3">
-            <button type="button" onClick={() => moveProject(-1)} aria-label={t.projects.previousProject} className="border border-border px-4 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary">←</button>
-            <button type="button" onClick={() => moveProject(1)} aria-label={t.projects.nextProject} className="border border-border px-4 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary">→</button>
+          <div className="flex items-center gap-4 lg:pb-3">
+            <button type="button" onClick={() => moveProject(-1)} aria-label={t.projects.previousProject} className="flex size-14 items-center justify-center border-2 border-primary bg-primary text-2xl font-mono text-primary-foreground shadow-md transition-all hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">←</button>
+            <button type="button" onClick={() => moveProject(1)} aria-label={t.projects.nextProject} className="flex size-14 items-center justify-center border-2 border-primary bg-primary text-2xl font-mono text-primary-foreground shadow-md transition-all hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">→</button>
           </div>
         </div>
       </div>

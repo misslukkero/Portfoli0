@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border px-6 pb-[25px] pt-[65px] md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 text-left md:flex-row md:items-center">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

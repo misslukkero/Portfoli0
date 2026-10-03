@@ -159,7 +159,7 @@ export function WorkSection() {
 
   return (
     <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[44px] pt-0 md:px-12 lg:px-24">
-<div className="max-w-6xl">
+<div className="mx-auto max-w-5xl">
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

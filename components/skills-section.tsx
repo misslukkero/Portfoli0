@@ -145,43 +145,45 @@ const skillCategories: SkillCategory[] = [
 ]
 
 function InteractiveSkills({
-  skills,
   locale,
-  activeSkill,
-  onSkillChange,
+  expandedCategory,
+  onCategoryChange,
   descriptionLabel,
-  categoryLabel,
+  categoryLabels,
 }: {
-  skills: SkillCategory["skills"]
   locale: Locale
-  activeSkill: number
-  onSkillChange: (index: number) => void
+  expandedCategory: number | null
+  onCategoryChange: (index: number) => void
   descriptionLabel: string
-  categoryLabel: string
+  categoryLabels: Record<string, string>
 }) {
-  const activeDescription = skills[activeSkill]?.description[locale]
-
   return (
-    <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr] md:items-start">
-      <div className="grid gap-3 sm:grid-cols-2">
-        {skillCategories.map((category, categoryIndex) => {
-          const isActive = activeSkill === categoryIndex
-          return (
-            <button key={category.id} type="button" onClick={() => onSkillChange(categoryIndex)} onMouseEnter={() => onSkillChange(categoryIndex)} aria-pressed={isActive} className={`group min-h-36 border p-5 text-left transition-all ${isActive ? "border-primary bg-primary/10 text-foreground" : "border-border bg-background/40 text-muted-foreground hover:-translate-y-0.5 hover:border-primary/60 hover:text-foreground"}`}>
-              <span className="mb-5 flex items-center justify-between font-mono text-[10px] tracking-[0.16em] text-primary"><span>{String(categoryIndex + 1).padStart(2, "0")}</span><span className="size-2 rounded-full bg-primary/60 transition-transform group-hover:scale-150" /></span>
-              <span className="block text-base font-medium">{categoryLabel}</span>
-              <span className="mt-2 block text-xs text-muted-foreground">{category.skills.length} skills</span>
+    <div className="mx-auto w-full max-w-3xl divide-y divide-border border-y border-border text-left">
+      {skillCategories.map((category, categoryIndex) => {
+        const isExpanded = expandedCategory === categoryIndex
+        return (
+          <div key={category.id}>
+            <button type="button" aria-expanded={isExpanded} onClick={() => onCategoryChange(categoryIndex)} className="group flex w-full items-center gap-5 px-4 py-5 text-left transition-colors hover:text-primary">
+              <span className="font-mono text-xs text-primary">{String(categoryIndex + 1).padStart(2, "0")}</span>
+              <span className="text-lg font-medium text-foreground group-hover:text-primary">{categoryLabels[category.titleKey]}</span>
+              <span aria-hidden="true" className="font-mono text-xl text-primary">{isExpanded ? "−" : "+"}</span>
             </button>
-          )
-        })}
-      </div>
-      <div className="border-l border-primary/40 pl-6 md:pl-8">
-        <span className="font-mono text-xs tracking-[0.2em] text-primary">{descriptionLabel}</span>
-        <div className="mt-5 space-y-3">
-          {skills.map((skill) => <p key={skill.name} className="border-b border-border pb-3 text-sm text-muted-foreground">{skill.name}</p>)}
-        </div>
-        <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{activeDescription}</p>
-      </div>
+            <div className={`grid transition-[grid-template-rows] duration-300 ${isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+              <div className="overflow-hidden">
+                <div className="space-y-5 px-4 pb-7 pt-1">
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {category.skills.map((skill) => <span key={skill.name} className="border border-border px-3 py-1 font-mono text-xs text-muted-foreground">{skill.name}</span>)}
+                  </div>
+                  <div className="mx-auto max-w-xl">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">{descriptionLabel}</span>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{category.skills[0]?.description[locale]}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -196,22 +198,17 @@ const certifications = [
 export function SkillsSection() {
   const { locale, t } = useI18n()
   const [expandedEducation, setExpandedEducation] = useState<number | null>(null)
-  const [activeSkills, setActiveSkills] = useState<Record<string, number>>({
-    dev: 0,
-    cloud: 0,
-    infra: 0,
-    profskills: 0,
-  })
+  const [expandedCategory, setExpandedCategory] = useState<number | null>(0)
 
   return (
     <section id="skills" className="relative min-h-screen border-t border-border/60 bg-card/50 px-6 pb-[26px] pt-0 md:px-12 lg:px-24">
-<div className="max-w-6xl">
+<div className="mx-auto max-w-5xl">
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className="mb-12"
         >
           <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase"></span>
           <h2 className="text-4xl md:text-5xl font-serif italic mt-4">
@@ -219,30 +216,16 @@ export function SkillsSection() {
           </h2>
         </motion.div>
 
-        <div className="space-y-10">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={category.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-            >
-              <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground mb-8">
-                {t.skills.categories[category.titleKey]}
-              </h3>
-              <InteractiveSkills
-                skills={category.skills}
-                locale={locale}
-                activeSkill={activeSkills[category.id] ?? 0}
-                onSkillChange={(index) =>
-                  setActiveSkills((current) => ({ ...current, [category.id]: index }))
-                }
-descriptionLabel={t.skills.descriptionLabel}
-  categoryLabel={t.skills.categories[category.titleKey]}
-  />
-            </motion.div>
-          ))}
+        <div className="space-y-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <InteractiveSkills
+              locale={locale}
+              expandedCategory={expandedCategory}
+              onCategoryChange={(index) => setExpandedCategory((current) => current === index ? null : index)}
+              descriptionLabel={t.skills.descriptionLabel}
+              categoryLabels={t.skills.categories}
+            />
+          </motion.div>
         </div>
 
         {/* Certifications */}
@@ -261,7 +244,7 @@ descriptionLabel={t.skills.descriptionLabel}
               const isExpanded = expandedEducation === index
               return (
                 <div key={cert.name} className="border-b border-border last:border-b-0">
-                  <button type="button" aria-expanded={isExpanded} onClick={() => setExpandedEducation(isExpanded ? null : index)} className="flex w-full items-center justify-between gap-4 py-4 text-left">
+                  <button type="button" aria-expanded={isExpanded} onClick={() => setExpandedEducation(isExpanded ? null : index)} className="flex w-full items-center gap-4 py-4 text-left">
                     <span className="flex items-baseline gap-4"><span className="font-mono text-xs text-primary">{cert.year}</span><span className="text-foreground">{cert.name}</span></span>
                     <span aria-hidden="true" className="font-mono text-primary">{isExpanded ? "−" : "+"}</span>
                   </button>
