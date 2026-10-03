@@ -69,7 +69,7 @@ export function Projects() {
   }
 
   return (
-    <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[29px] pt-[26px] md:px-12 lg:px-24">
+    <section id="projects" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 py-16 md:px-12 lg:px-24">
 <div className="mx-auto max-w-5xl">
   
   {/* Título de sección */}
