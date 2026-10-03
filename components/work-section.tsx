@@ -159,7 +159,7 @@ export function WorkSection() {
 
   return (
     <section id="work" className="relative min-h-screen border-t border-border/60 bg-secondary/20 px-6 pb-[44px] pt-0 md:px-12 lg:px-24">
-<div className="max-w-6xl">
+<div className="mx-auto max-w-5xl">
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -190,7 +190,7 @@ export function WorkSection() {
                   type="button"
                   aria-expanded={isExpanded}
                   onClick={() => setExpandedExperience(isExpanded ? null : experience.id)}
-                  className="grid w-full gap-5 p-6 text-center md:grid-cols-[1fr_auto] md:items-start md:p-8"
+                  className="grid w-full gap-5 p-6 text-left md:grid-cols-[1fr_auto] md:items-start md:p-8"
                 >
                   <span>
                     <span className="mb-3 block font-mono text-xs text-primary">{experience.periodStart} — {experience.periodEnd || t.work.present}</span>

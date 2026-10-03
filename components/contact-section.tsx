@@ -19,7 +19,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="relative flex min-h-[90svh] items-center border-t border-border/60 bg-background px-6 pb-[27px] pt-[13px] text-foreground md:px-12 lg:px-24">
-      <div className="mx-auto w-full max-w-6xl text-center">
+      <div className="mx-auto w-full max-w-5xl text-left">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

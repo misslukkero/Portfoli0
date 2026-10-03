@@ -158,12 +158,12 @@ function InteractiveSkills({
   categoryLabels: Record<string, string>
 }) {
   return (
-    <div className="mx-auto w-full max-w-3xl divide-y divide-border border-y border-border text-center">
+    <div className="mx-auto w-full max-w-3xl divide-y divide-border border-y border-border text-left">
       {skillCategories.map((category, categoryIndex) => {
         const isExpanded = expandedCategory === categoryIndex
         return (
           <div key={category.id}>
-            <button type="button" aria-expanded={isExpanded} onClick={() => onCategoryChange(categoryIndex)} className="group flex w-full items-center justify-center gap-5 px-4 py-5 text-center transition-colors hover:text-primary">
+            <button type="button" aria-expanded={isExpanded} onClick={() => onCategoryChange(categoryIndex)} className="group flex w-full items-center gap-5 px-4 py-5 text-left transition-colors hover:text-primary">
               <span className="font-mono text-xs text-primary">{String(categoryIndex + 1).padStart(2, "0")}</span>
               <span className="text-lg font-medium text-foreground group-hover:text-primary">{categoryLabels[category.titleKey]}</span>
               <span aria-hidden="true" className="font-mono text-xl text-primary">{isExpanded ? "−" : "+"}</span>
@@ -202,13 +202,13 @@ export function SkillsSection() {
 
   return (
     <section id="skills" className="relative min-h-screen border-t border-border/60 bg-card/50 px-6 pb-[26px] pt-0 md:px-12 lg:px-24">
-<div className="mx-auto max-w-6xl text-center">
+<div className="mx-auto max-w-5xl">
   <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
+          className="mb-12"
         >
           <span className="font-mono text-xs text-primary tracking-[0.3em] uppercase"></span>
           <h2 className="text-4xl md:text-5xl font-serif italic mt-4">
@@ -244,7 +244,7 @@ export function SkillsSection() {
               const isExpanded = expandedEducation === index
               return (
                 <div key={cert.name} className="border-b border-border last:border-b-0">
-                  <button type="button" aria-expanded={isExpanded} onClick={() => setExpandedEducation(isExpanded ? null : index)} className="flex w-full items-center justify-center gap-4 py-4 text-center">
+                  <button type="button" aria-expanded={isExpanded} onClick={() => setExpandedEducation(isExpanded ? null : index)} className="flex w-full items-center gap-4 py-4 text-left">
                     <span className="flex items-baseline gap-4"><span className="font-mono text-xs text-primary">{cert.year}</span><span className="text-foreground">{cert.name}</span></span>
                     <span aria-hidden="true" className="font-mono text-primary">{isExpanded ? "−" : "+"}</span>
                   </button>

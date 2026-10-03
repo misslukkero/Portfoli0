@@ -9,7 +9,7 @@ export function HeroSection() {
 
   return (
     <section id="about" className="relative min-h-[92svh] overflow-hidden px-6 pb-[53px] pt-[86px] md:px-12 lg:px-24">
-      <div className="w-full max-w-6xl mx-auto">
+      <div className="mx-auto w-full max-w-5xl">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-12 lg:gap-16">
         
           <motion.div
@@ -32,7 +32,7 @@ export function HeroSection() {
           </motion.div>
 
         
-          <div className="order-1 text-center lg:order-1">
+          <div className="order-1 text-left lg:order-1">
           
           <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export function HeroSection() {
         
             
             <motion.div 
-              className="mt-8 flex items-center justify-center gap-4"
+              className="mt-8 flex items-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -70,7 +70,7 @@ export function HeroSection() {
 
             
             <motion.div 
-              className="mx-auto mt-10 grid max-w-xl grid-cols-3 gap-6 text-center"
+              className="mt-10 grid max-w-xl grid-cols-3 gap-6 text-left"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
